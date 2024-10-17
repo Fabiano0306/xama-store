@@ -8,6 +8,34 @@ body{
     font-family: 'arial';
 }
 
+.typing-effect {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(200, end) forwards, blink-caret 0.75s step-end infinite;
+    text-shadow: 0 0 rgba(0, 0, 0, 0.5); /* Sombra inicial invisível */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 70%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
+/* Efeito de sombra gradual */
+@keyframes shadow-appear {
+    from { text-shadow: 0 0 rgba(0, 0, 0, 0); }
+    to { text-shadow: 0 0 20px rgba(0, 0, 0, 0.5); } /* Sombra suave */
+}
+
+/* Adiciona a animação de sombra */
+.typing-effect:hover {
+    animation: shadow-appear 0.5s forwards; /* Ativa o efeito ao passar o mouse */
+}
 
 .header-inner-content{
     max-width: 1600px;
@@ -15,9 +43,27 @@ body{
     margin-right: auto;
 }
 
+/* Estilos básicos da navbar */
+.navbar {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para uma nova linha se necessário */
+    justify-content: space-between; /* Distribui os itens entre os cantos */
+    align-items: center; /* Centraliza os itens verticalmente */
+    padding: 10px 20px; /* Espaçamento */
+    background-color: #333; /* Cor de fundo (ajuste conforme necessário) */
+    position: relative;
+    z-index: 1000; /* Garante que a barra fique acima de outros elementos */
+}
+
 .logotipo{
     width: 13%;
+    margin-right: auto; /* Empurra o logotipo para a esquerda */
 }
+
+.navbar .logotipo img {
+    max-width: 150px; /* Ajusta o tamanho do logotipo */
+}
+
 .navbar{
     background-color: #2c2c2c;
     padding: 1rem;
@@ -48,18 +94,19 @@ nav ul{
     align-items: center;
 }
 
-.nav-icon-container{
+.nav-icon-container {
     display: flex;
     align-items: center;
+    gap: 15px; /* Espaço entre os ícones (carrinho, etc) */
 }
 
-.nav-icon-container img{
-    width: 35px;
+.nav-icon-container img {
+    max-width: 30px; /* Ajusta o tamanho do ícone do carrinho */
     cursor: pointer;
 }
 
 .nav-icon-container img:first-child{
-    margin-right: 1rem;
+    margin-right: 0.2rem;
 }
 
 nav ul li{
@@ -74,8 +121,26 @@ nav ul li:hover{
     font-weight: bold;
 }
 
+
+
 .menu-button{
-    display: none;
+    display: none;  /* Exibe o botão de menu hamburguer no mobile */
+}
+
+.menu {
+    flex-grow: 1; /* Faz o menu ocupar o espaço restante */
+    display: flex;
+    justify-content: center; /* Centraliza o menu no meio */
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 100px; /* Espaço entre os itens do menu */
+}
+
+.menu ul li {
+    margin: 0;
 }
 
 header{
@@ -89,30 +154,39 @@ header{
 }
 
 .header-bottom-side-left{
+    font-family: 'Courier New', Courier, monospace;
     height: 100%;
     flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    text-align: center;
 }
 
 .header-bottom-side-left h2{
-    font-size: 3.2rem;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .header-bottom-side-left p{
-    line-height: 1.5rem;
+    line-height: 1rem;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .header-bottom-side-left button{
     background-color: #2c2c2c;
     border: none;
     cursor: pointer;
-    padding: 0.8rem 3.8rem;
+    padding:10px 20px;
     border-radius: 9999px;
     color: #fff;
     font-weight: 500;
     font-size: 1rem;
     transition: all 0.2s;
+    margin-top: 20px;
 }
 
 .header-bottom-side-left button:hover{
@@ -131,6 +205,75 @@ header{
     margin: 0 auto;
 }
 
+/* Mobile design (para telas menores que 768px) */
+@media (max-width: 768px) {
+
+    .header-bottom-side-left h2 {
+        font-size: 1.5rem; /* Diminui mais a fonte no mobile */
+        text-align: center; /* Garante que fique centralizado */
+    }
+
+    .header-bottom-side-left p {
+        font-size: 0.9rem; /* Ajusta a frase debaixo */
+        text-align: center; /* Centraliza no mobile */
+        padding: 10px; /* Dá espaço ao redor para não colar nas bordas */
+    }
+
+    .navbar {
+        flex-direction: row; /* Empilha os elementos no mobile */
+        padding: 10px;
+    }
+
+    .logotipo img {
+        max-width: 50%; /* Diminui o logotipo no mobile */
+    }
+
+    .menu ul {
+        flex-direction: column; /* Coloca os itens do menu verticalmente */
+        align-items: center;
+    }
+
+    .nav-icon-container {
+        margin-top: 10px; /* Adiciona espaço acima dos ícones */
+    }
+
+    .nav-icon-container img {
+        max-width: 25px; /* Diminui um pouco os ícones no mobile */
+    }
+}
+
+/* Ocultar o menu padrão e mostrar o botão de menu no mobile */
+@media (max-width: 768px) {
+    .menu ul {
+        display: none; /* Esconde o menu padrão */
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    }
+
+    .menu-button {
+        display: block; /* Mostra o botão de menu no mobile */
+        cursor: pointer;
+        margin-left: auto; /* Coloca o menu hamburguer à direita */
+    }
+
+    /* Quando o menu é ativado (quando o botão é clicado) */
+    .navbar.show-menu .menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+/* Por padrão, o botão de menu está oculto no desktop */
+.menu-button {
+    display: none;
+}
 
 @media (max-width: 800px){
     .logo{
@@ -139,6 +282,7 @@ header{
 
     .menu-button{
         display: block;
+        margin-left: auto; /* Coloca o menu hamburguer à direita */
     }
 
     .header-bottom-side{

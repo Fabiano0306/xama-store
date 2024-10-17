@@ -108,9 +108,13 @@
                 </nav>
             </div>
             <div class="nav-icon-container">
-                <img src="images/cart.png" id="cart-icon" alt="Carrinho de Compras" />
+                <img src="/images/cart.png" id="cart-icon" /> <!-- Ícone do Carrinho -->
                 <span id="cart-count">0</span> <!-- Exibe a quantidade de itens -->
-                <img src="images/menu.png" class="menu-button" alt="Menu" />
+                <div id="cart-dropdown" style="display: none;"> <!-- Itens do carrinho -->
+                    <ul id="cart-items"></ul>
+                    <p>Total: R$ <span id="cart-total">0.00</span></p>
+                </div>
+                <img src="images/menu.png" class="menu-button" />
             </div>
         </div>
     </div>

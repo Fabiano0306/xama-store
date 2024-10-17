@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto - Boné</title>
+    <link rel="stylesheet" href="/Styles/globals.css"> <!-- Seu CSS global -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .page-inner-content {
+            padding: 20px;
+        }
+        .product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .colors {
+            margin-top: 20px;
+        }
+        .color-swatch {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #ccc;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .color-black-white { background: linear-gradient(to right, #000, #fff); }
+        .color-red-black { background: linear-gradient(to right, #ff0000, #000); }
+        .color-white-black { background: linear-gradient(to right, #fff, #000); }
+        #add-to-cart {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2b2b2b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #add-to-cart:hover {
+            background-color: #033463;
+        }
+
+        /* Estilos para a imagem de zoom */
+        .zoom-image {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .zoom-image img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid white;
+        }
+        .zoom-image .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        .product-image-container img {
+            cursor: zoom-in;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <div class="navbar">
+        <div class="header-inner-content">
+            <div class="logotipo"><img src="images/logo.png" alt="Logo"></div> 
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html" style="text-decoration: none; color: inherit;">INICIO</a></li>
+                        <li><a href="produtos.html" style="text-decoration: none; color: inherit;">PRODUTOS</a></li>
+                        <li><a href="sobre.html" style="text-decoration: none; color: inherit;">SOBRE</a></li>
+                        <li><a href="https://wa.me/5547991906158" style="text-decoration: none; color: inherit;">CONTATO</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-icon-container">
+                <img src="/images/cart.png" id="cart-icon" alt="Carrinho de Compras" />
+                <span id="cart-count">0</span>
+                <img src="images/menu.png" class="menu-button" alt="Menu" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="page-inner-content">
+        <h1 id="product-title">BONÉS NY</h1>
+        <div class="product">
+            <div class="product-image-container">
+                <img id="product-image" src="/images/products/product-16.png" alt="Bonés" width="300" onclick="openZoom()">
+            </div>
+            <p id="product-description"><b>Descrição: Boné de alta qualidade, disponível em várias cores.</b></p>
+            <h3><u>Selecione a cor desejada:</u></h3>
+            <div class="colors">
+                <div class="color-swatch color-red-black" title="Preto e Vermelho" onclick="selectColor('preto-vermelho')"></div>
+                <div class="color-swatch color-black-white" title="Branco e Preto" onclick="selectColor('branco-preto')"></div>
+                <div class="color-swatch color-white-black" title="Gerais" onclick="selectColor('gerais')"></div>
+            </div>
+            <p id="selected-color"><b>Cor selecionada: Nenhuma</b></p>
+            <button id="add-to-cart" onclick="addToCart()">ADICIONAR AO CARRINHO</button>
+        </div>
+    </div>
+
+    <!-- Imagem de Zoom -->
+    <div class="zoom-image" id="zoom-image" onclick="closeZoom()">
+        <span class="close" onclick="closeZoom()">&times;</span>
+        <img id="zoomed-image" src="" alt="Zoomed Image">
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="gray-background">
+        <div class="page-inner-content footer-content">
+            <div class="download-options">
+                <p>Entre em contato conosco</p>
+                <p>Vendas somente pelo Whatsapp</p>
+            </div>
+            <div class="logo-footer">
+                <p>Nosso objetivo é ajudar pessoas a terem estilo!</p>
+            </div>
+        </div>
+        <hr class="page-inner-content" />
+        <div class="page-inner-content copyright">
+            <p>Copyright 2024 - Todos os Direitos Reservados a XAMÃ STORE</p>
+        </div>
+    </footer>
+
+    <script>
+        function openZoom() {
+            const zoomedImage = document.getElementById('zoomed-image');
+            const productImage = document.getElementById('product-image').src;
+            zoomedImage.src = productImage;
+            document.getElementById('zoom-image').style.display = 'flex';
+        }
+
+        function closeZoom() {
+            document.getElementById('zoom-image').style.display = 'none';
+        }
+
+        function selectColor(color) {
+            const selectedColorText = document.getElementById('selected-color');
+            const productImage = document.getElementById('product-image');
+            selectedColorText.textContent = 'Cor selecionada: ' + color.charAt(0).toUpperCase() + color.slice(1);
+
+            switch(color) {
+                case 'preto-vermelho':
+                    productImage.src = '/images/products/product-6.png';
+                    break;
+                case 'branco-preto':
+                    productImage.src = '/images/products/product-2.png';
+                    break;
+                case 'gerais':
+                    productImage.src = '/images/products/bones.png';
+                    break;
+                default:
+                    productImage.src = '/images/products/product-16.png';
+            }
+        }
+
+        function addToCart() {
+            const selectedColorText = document.getElementById('selected-color').textContent;
+            if (selectedColorText === 'Cor selecionada: Nenhuma') {
+                alert('Por favor, selecione uma cor antes de adicionar ao carrinho.');
+                return;
+            }
+            alert('Item adicionado ao carrinho!');
+        }
+    </script>
+</body>
+</html>

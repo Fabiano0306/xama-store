@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="/Styles/globals.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #cart-items {
+            list-style: none;
+            padding: 0;
+        }
+        #cart-items li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        #cart-items img {
+            width: 150px;
+            height: auto;
+            margin-right: 10px;
+        }
+        #cart-total {
+            font-weight: bold;
+        }
+        .remove-button {
+            margin-left: 15px;
+            background-color: #ff6666;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+        #whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin-left: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        #whatsapp-button:hover {
+            background-color: #1eb941;
+        }
+        #clear-cart {
+            background-color: #ff6666;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        #clear-cart:hover {
+            background-color: #e63946;
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-start; /* Alinha os botões à esquerda */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <div class="navbar">
+        <div class="header-inner-content">
+            <div class="logotipo"><img src="images/logo.png" alt="Logo"></div> 
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html" style="text-decoration: none; color: inherit;">INICIO</a></li>
+                        <li><a href="produtos.html" style="text-decoration: none; color: inherit;">PRODUTOS</a></li>
+                        <li><a href="sobre.html" style="text-decoration: none; color: inherit;">SOBRE</a></li>
+                        <li><a href="https://wa.me/5547991906158" style="text-decoration: none; color: inherit;">CONTATO</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-icon-container">
+                <img src="/images/cart.png" id="cart-icon" alt="Carrinho de Compras" />
+                <span id="cart-count">0</span> <!-- Exibe a quantidade de itens -->
+                <img src="images/menu.png" class="menu-button" alt="Menu" />
+            </div>
+        </div>
+    </div>
+
+    <h1><u>Carrinho de Compras:</u></h1>
+    <ul id="cart-items">
+        <!-- Itens do carrinho aparecerão aqui -->
+    </ul>
+    <p>Total: R$ <span id="cart-total">0.00</span></p>
+    
+    <!-- Container para os botões -->
+    <div class="button-container">
+        <button id="whatsapp-button">Enviar para WhatsApp</button>
+        <button id="clear-cart">Esvaziar Carrinho</button>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="gray-background">
+        <div class="page-inner-content footer-content">
+            <!-- Conteúdo do rodapé -->
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            const clearCartButton = document.getElementById('clear-cart');
+            const whatsappButton = document.getElementById('whatsapp-button');
+
+            // Recuperar o carrinho do localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Função para atualizar a exibição do carrinho
+            function updateCartDisplay() {
+                cartItems.innerHTML = ''; // Limpar a lista atual de itens do carrinho
+                let total = 0;
+
+                cart.forEach((item, index) => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.title}">
+                        ${item.title} - R$${item.price.toFixed(2)}
+                        <button class="remove-button" data-index="${index}">Remover</button>
+                    `;
+                    cartItems.appendChild(listItem);
+                    total += item.price;
+                });
+
+                cartTotal.textContent = total.toFixed(2);
+                updateCartCount();
+            }
+
+            // Função para remover item do carrinho
+            function removeItemFromCart(index) {
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartDisplay();
+            }
+
+            // Adiciona eventos de remoção aos botões
+            cartItems.addEventListener('click', function(event) {
+                if (event.target.classList.contains('remove-button')) {
+                    const index = event.target.getAttribute('data-index');
+                    removeItemFromCart(index);
+                }
+            });
+
+            // Esvaziar o carrinho
+            clearCartButton.addEventListener('click', function() {
+                cart = [];
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartDisplay();
+            });
+
+            // Função para enviar o carrinho para o WhatsApp
+whatsappButton.addEventListener('click', function() {
+    if (cart.length === 0) {
+        alert("O carrinho está vazio.");
+        return;
+    }
+
+    let message = "Olá, gostaria de comprar os seguintes itens:\n\n";
+    cart.forEach((item) => {
+        message += `- ${item.title}: R$${item.price.toFixed(2)}\n`;
+        message += `Imagem: ${item.image}\n`; // Inclui o link da imagem do item
+    });
+    message += `\nTotal: R$${cart.reduce((total, item) => total + item.price, 0).toFixed(2)}`;
+
+    // Link do seu WhatsApp com a mensagem pré-preenchida
+    const whatsappUrl = `https://wa.me/5547991906158?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+});
+
+
+            // Atualiza o contador de itens do carrinho
+            function updateCartCount() {
+                const cartCount = document.getElementById('cart-count');
+                cartCount.textContent = cart.length;
+            }
+
+            // Inicializa a exibição do carrinho
+            updateCartDisplay();
+        });
+    </script>
+</body>
+</html>

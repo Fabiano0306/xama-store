@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XAMÃ | STORE </title>
+    <link rel="stylesheet" href="/Styles/globals.css" />
+</head>
+<style>
+    img{
+        width: 100%;
+    }
+
+        /* Estilos básicos */
+        .typing-effect {
+            font-family: 'Courier New', Courier, monospace; /* Fonte estilo máquina de escrever */
+            white-space: nowrap; /* Mantém o texto em uma linha */
+            overflow: hidden; /* Oculta o conteúdo além da área visível */
+            border-right: 3px solid; /* Adiciona o efeito do cursor piscante */
+            animation: typing 2s steps(200, end) forwards, /* Tempo para digitar todo o texto */
+               blink-caret 0.75s step-end infinite,
+               pause 2s forwards, /* Tempo de espera após a digitação */
+               erase 4s steps(200, end) forwards; /* Tempo para apagar */
+            width: 0; /* Inicia com largura zero para o efeito */
+            text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao texto */
+        }
+
+        @keyframes typing {
+            from { width: 0%; } /* Começa do 0 */
+            to { width: 70%; } /* Vai até o tamanho total do conteúdo */
+        }
+
+        @keyframes pause {
+    from { width: 70%; } /* Mantém o texto visível */
+    to { width: 70%; } /* Mantém o texto visível */
+}
+
+        @keyframes erase {
+            0%, 90% { width: 70%; } /* Mantém o texto visível por 90% do tempo */
+           40% { width: 0; } /* Apaga o texto */
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; } /* Cor do cursor piscante */
+        }
+</style>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const buyButtons = document.querySelectorAll('.buy-button');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const cartCount = document.getElementById('cart-count');
+    let total = 0;
+    let itemCount = 0;
+
+    // Recuperar o carrinho do localStorage ao carregar a página
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Função para atualizar a exibição do carrinho
+    function updateCartDisplay() {
+        cartItems.innerHTML = ''; // Limpar a lista atual de itens do carrinho
+        cart.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${item.name} - R$${item.price.toFixed(2)}`;
+            cartItems.appendChild(listItem);
+        });
+        cartTotal.textContent = cart.reduce((sum, item) => sum + item.price, 0).toFixed(2);
+        cartCount.textContent = cart.length;
+    }
+
+    // Inicializa a exibição do carrinho ao carregar a página
+    updateCartDisplay();
+
+    // Adiciona o evento de clique para cada botão de compra
+    buyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const product = this.parentElement;
+            const productName = product.getAttribute('data-name');
+            const productPrice = parseFloat(product.getAttribute('data-price'));
+
+            // Verificar se o preço foi convertido corretamente
+            if (!isNaN(productPrice)) {
+                // Adicionar o produto ao array de carrinho
+                cart.push({ name: productName, price: productPrice });
+                
+                // Atualizar o localStorage com o carrinho
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                // Atualizar a exibição do carrinho
+                updateCartDisplay();
+            } else {
+                console.error('Erro: Preço inválido detectado.');
+            }
+        });
+    });
+});
+    </script>
+    <div class="navbar">
+        <div class="header-inner-content">
+                <div class="logotipo"><img src="images/logo.png"></div> 
+            <div class="menu">
+                <nav>
+                <ul>
+                    <li >INICIO</li>
+                    <li><a href="produtos.html" style="text-decoration: none; color: inherit;">PRODUTOS</a></li>
+                    <li>SOBRE</li>
+                    <li><a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">CONTATO</a></li>
+                </ul>
+                </nav>
+            </div>
+            </nav>
+            <div class="nav-icon-container">
+                <img src="/images/cart.png" id="cart-icon" /> <!-- Ícone do Carrinho -->
+                <span id="cart-count">0</span> <!-- Exibe a quantidade de itens -->
+                <div id="cart-dropdown" style="display: none;"> <!-- Itens do carrinho -->
+                    <ul id="cart-items"></ul>
+                    <p>Total: R$ <span id="cart-total">0.00</span></p>
+                </div>
+                <img src="images/menu.png" class="menu-button" />
+            </div>
+            <script>
+                // Seleciona o ícone do carrinho e adiciona o evento de redirecionamento
+                const cartIcon = document.getElementById('cart-icon');
+                
+                // Adiciona o evento de clique ao ícone do carrinho
+                cartIcon.addEventListener('click', function() {
+                    window.location.href = 'cart.html'; // Redireciona para a página do carrinho
+                });
+            </script>
+            
+        </div>
+    </div>
+    <header>
+        <div class="header-inner-content">
+            <div class="header-bottom-side">
+                <div class="header-bottom-side-left">
+                    <h2 class="typing-effect">SEJA BEM - VINDO!</h2> <!-- Adicionado o efeito de máquina de escrever -->
+                    <p>Sucesso nem sempre tem a ver com grandeza! <b>Tem a ver com consistência.</b></p>
+                    </p>
+                    <button id="verAgoraBtn">Ver Produtos</button>
+                </div>
+                    <div class="header-bottom-side-right">
+                        <img src="/images/gaming-msi-header.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="gray-background">
+            <div class="page-inner-content">
+                <div class="cols cols-3">
+                    <img src="/images/products/camisetasgif.gif" alt="" />
+                    <img src="/images/products/bones.png" alt="" />
+                    <img src="/images/products/product-19.png" alt="" />
+                    <img src="/images/products/relogiogif.gif" alt="" />
+                </div>
+            </div>
+        </div>
+        
+        
+        <div>
+            <div class="page-inner-content">
+                <h3 class="section-title">Nossos Produtos</h3>
+                <div class="subtitle-underline"></div>
+                <div class="cols cols-4" id="produtos">
+                    <div class="product" data-name="CAMISETA 1" data-price="60.00">
+                        <a href="bones.html" style="text-decoration: none; color: inherit;">
+                        <img src="/images/products/product-4.png" alt="" />
+                        <p class="product-name"><i>BONÉS - LACOSTE</i></p>
+                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                        <p class="product-price"><b>R$60,00</b></p>
+                        <button class="buy-button">Comprar</button>
+                    </a>
+                    </div>
+                    <div class="product" data-name="CAMISETA 1" data-price="80.00">
+                        <a href="bones.html" style="text-decoration: none; color: inherit;">
+                        <img src="/images/products/product-6.png" alt="" />
+                        <p class="product-name"><i>BONÉS NY</i></p>
+                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                        <p class="product-price"><b>R$80,00</b></p>
+                        <button class="buy-button">Comprar</button>
+                        </a>
+                    </div>
+                    <div class="product" data-name="CAMISETA 1" data-price="80.00">
+                        <a href="camisas.html" style="text-decoration: none; color: inherit;">
+                        <img src="/images/products/product-19.png" alt="" />
+                        <p class="product-name"><i>CAMISETAS DIVERSAS</i></p>
+                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                        <p class="product-price"><b>R$80,00</b></p>
+                        <button class="buy-button">Comprar</button>
+                        </a>
+                    </div>
+                    <div class="product" data-name="CAMISETA 1" data-price="80.00">
+                        <a href="produtorelogio.html" style="text-decoration: none; color: inherit;">
+                        <img src="/images/products/product-7.png" alt="" />
+                        <p class="product-name"><i>RELÓGIO MASCULINO G-SHOCK</i></p>
+                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                        <p class="product-price"><b>R$80,00</b></p>
+                        <button class="buy-button">Comprar</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="page-inner-content">
+                <h3 class="section-title">Últimos produtos adicionados</h3>
+                <div class="subtitle-underline"></div>
+                <div class="cols cols-4">
+                    <div class="product" data-name="CAMISETA 1" data-price="279.00">
+                        <a href="produtorelogio.html" style="text-decoration: none; color: inherit;">
+                        <img src="/images/products/product-8.png" alt="" />
+                        <p class="product-name"><i>RELÓGIO MASCULINO G-SHOCK CINZA</i></p>
+                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                        <p class="product-price"><b>R$279,00</b></p>
+                        <button class="buy-button">Comprar</button>
+                        </a>
+                    </div>
+                    <div class="product" data-name="CAMISETA 1" data-price="80.00">
+                        <img src="/images/products/product-9.png" alt="" />
+                        <p class="product-name"><i>RELÓGIO MASCULINO G-SHOCK</i></p>
+                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                        <p class="product-price"><b>R$80,00</b></p>
+                        <button class="buy-button">Comprar</button>
+                    </div>
+                    <div class="product" data-name="CAMISETA 1" data-price="80.00">
+                        <img src="/images/products/product-10.png" alt="" />
+                        <p class="product-name"><i>RELÓGIO MASCULINO G-SHOCK</i></p>
+                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                        <p class="product-price"><b>R$80,00</b></p>
+                        <button class="buy-button">Comprar</button>
+                    </div>
+                    <div class="product" data-name="CAMISETA 1" data-price="80.00">
+                        <img src="/images/products/product-11.png" alt="" />
+                        <p class="product-name"><i>RELÓGIO MASCULINO G-SHOCK</i></p>
+                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                        <p class="product-price"><b>R$80,00</b></p>
+                        <button class="buy-button">Comprar</button>
+                    </div>
+                    <div class="product" data-name="CAMISETA 1" data-price="80.00">
+                        <img src="/images/products/product-12.png" alt="" />
+                        <p class="product-name"><i>CAMISETAS DIVERSAS</i></p>
+                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                        <p class="product-price"><b>R$80,00</b></p>
+                        <button class="buy-button">Comprar</button>
+                    </div>
+                    <div class="product" data-name="CAMISETA 1" data-price="80.00">
+                        <img src="/images/products/product-13.png" alt="" />
+                        <p class="product-name"><i>CAMISETA ARMANI</i></p>
+                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                        <p class="product-price"><b>R$80,00</b></p>
+                        <button class="buy-button">Comprar</button>
+                    </div>
+                    <div class="product" data-name="CAMISETA 1" data-price="80.00">
+                        <img src="/images/products/product-14.png" alt="" />
+                        <p class="product-name"><i>BONÉ LOGO LACOSTE</i></p>
+                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                        <p class="product-price"><b>R$80,00</b></p>
+                        <button class="buy-button">Comprar</button>
+                    </div>
+                    <div class="product" data-name="CAMISETA 1" data-price="00.00">
+                        <img src="/images/products/product-15.png" alt="" />
+                        <p class="product-name"><i>XAMÃ STORE</i></p>
+                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                        <p class="product-price"><b>R$00,00</b></p>
+                        <button class="buy-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gray-background">
+            <div class="header-inner-content">
+                <div class="header-bottom-side exclusive-container">
+                    <div class="header-bottom-side-left">
+                        <h2><u>DEIVID ARNDTT</u></h2>
+                        <p>
+                            Conheça <b>Minha história.</b>
+                        </p>
+                        <button>Ver Agora &#8594;</button>
+                    </div>
+                        <div class="header-bottom-side-right">
+                            <img src="/images/exclusive.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-inner-content">
+            <div class="testemunhas">
+                <div class="testemunha">
+                    <p>"</p>
+                    <p>O melhor website ecommerce moderno e responsivo,
+                        super recomendo!
+                    </p>
+                    <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p>Fabiano Santos</p>
+                </div>
+                <div class="testemunha">
+                    <p>"</p>
+                    <p>O melhor website ecommerce moderno e responsivo,
+                        super recomendo!
+                    </p>
+                    <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p>Fabiano Santos</p>
+                </div>
+                <div class="testemunha">
+                    <p>"</p>
+                    <p>O melhor website e-commerce moderno e responsivo,
+                        super recomendo!
+                    </p>
+                    <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p>Fabiano Santos</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="gray-background">
+        <div class="page-inner-content footer-content">
+            <div class="download-options">
+                <p>Entre em contato conosco</p>
+                <p>Vendas somente pelo Whatsapp!</p> 
+                <p><b><u>Consulte o estoque!</u></b></p>
+                <div>
+                    <a href="https://wa.me/5547991906158" target="_blank"> <!-- URL -->
+                        <img src="/images/app-store.png" alt="Acessar WhatsApp" />
+                    </a>
+                    <a href="https://www.instagram.com/deividarndtt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"> <!-- URL da Play Store -->
+                        <img src="/images/play-store.png" alt="Acessar Instagram" />
+                    </a>
+                </div>
+                
+            </div>
+            <div class="logo-footer">
+                <div class="logo">
+                    <img src="/images/footer2.png" />
+                </div>
+                <p>
+                    Nosso objetivo é ajudar pessoas a terem estilo!
+                </p>
+            </div>
+            <div class="links-footer">
+                <h3><u>Links úteis</u></h3>
+                <ul>
+                    <li>Nossa Política</li>
+                    <li>Cupons de Desconto</li>
+                    <li><a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">WhatsApp</a></li>
+                    <li><a href="https://www.instagram.com/deividarndtt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="text-decoration: none; color: inherit;">Instagram</a></li>
+                </ul>
+                
+            </div>
+        </div>
+        <hr class="page-inner-content" />
+        <div class="page-inner-content copyright">
+            <p>Copyright 2024 - Fabiano Santos - Todos os Direitos Reservados a XAMÃ STORE</p>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector(".navbar");
+        const menuButton = document.querySelector(".menu-button");
+
+        menuButton.addEventListener("click", () => {
+            navbar.classList.toggle("show-menu");
+        });
+    </script>
+    <script>
+        document.getElementById('verAgoraBtn').addEventListener('click', function() {
+            // Rolagem suave até a seção com ID "produtos"
+            document.getElementById('produtos').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    
+</body>
+</html>

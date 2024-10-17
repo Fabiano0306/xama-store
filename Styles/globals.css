@@ -231,6 +231,15 @@ header{
     .menu ul {
         flex-direction: column; /* Coloca os itens do menu verticalmente */
         align-items: center;
+        background-color:#2c2c2c; /* Define a cor de fundo do menu */
+    color: rgb(255, 255, 255); /* Define a cor do texto */
+    padding: 10px; /* Adiciona padding */
+    position: absolute; /* Para que o menu fique sobre outros elementos */
+    top: 50px; /* Ajuste conforme necessário */
+    right: 0; /* Alinha à direita */
+    width: 100%; /* Ocupa toda a largura do container */
+    display: none; /* Inicialmente escondido */
+    z-index: 1000; /* Fica acima de outros elementos */
     }
 
     .nav-icon-container {
@@ -248,7 +257,7 @@ header{
         display: none; /* Esconde o menu padrão */
         flex-direction: column;
         align-items: center;
-        background-color: white;
+        background-color: #2c2c2c;
         position: absolute;
         top: 50px;
         right: 0;

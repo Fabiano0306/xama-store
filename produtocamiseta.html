@@ -114,7 +114,7 @@
                     <ul id="cart-items"></ul>
                     <p>Total: R$ <span id="cart-total">0.00</span></p>
                 </div>
-                <img src="images/menu.png" class="menu-button" />
+                <img src="images/menu.png" class="menu-button" alt="Menu" />
             </div>
         </div>
     </div>
@@ -178,7 +178,7 @@
         </div>
         <hr class="page-inner-content" />
         <div class="page-inner-content copyright">
-            <p>Copyright 2024 - Fabiano Santos - Todos os Direitos Reservados a XAMÃ STORE</p>
+            <p>Desenvolvido por <a href="https://www.instagram.com/nextfeel_/" target="_blank" style="text-decoration: none; color: inherit;"><u>Fabiano Santos</u></a> - Todos os Direitos Reservados a XAMÃ STORE</p>
         </div>
     </footer>
 
@@ -291,6 +291,25 @@
         function closeZoom() {
             document.getElementById('zoom-image').style.display = 'none'; // Esconde o contêiner de zoom
         }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector(".menu-button");
+            const navbar = document.querySelector(".navbar");
+    
+            menuButton.addEventListener("click", () => {
+                navbar.classList.toggle("show-menu"); // Alterna a classe para mostrar/ocultar o menu
+            });
+        });
+    </script>
+    <script>
+        const menuItems = document.querySelectorAll('.menu ul li a'); // Seleciona todos os links do menu
+
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        navbar.classList.remove('show-menu'); // Remove a classe quando um item for clicado
+    });
+});
     </script>
 </body>
 </html>

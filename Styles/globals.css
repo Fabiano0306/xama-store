@@ -310,7 +310,7 @@ header{
 
 .logotipo{
     width: 50%;
-    margin-right: 170px; /* Empurra o logotipo para a esquerda */
+    margin-right: 140px; /* Empurra o logotipo para a esquerda */
 }
 
 /* Mobile design (para telas menores que 768px) */

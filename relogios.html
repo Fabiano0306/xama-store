@@ -6,34 +6,42 @@
     <title>XAMÃ STORE | Relógios</title>
     <link rel="stylesheet" href="/Styles/globals.css" />
 </head>
+<style>
+    img{
+        width: 100%;
+    }
+
+      
+</style>
 <body>
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="header-inner-content">
-            <div class="logotipo">
-                <img src="images/logo.png" alt="Logotipo">
-            </div> 
-            <div class="menu">
-                <nav>
-                    <ul>
-                        <li><a href="index.html" style="text-decoration: none; color: inherit;">INICIO</a></li>
-                        <li><a href="produtos.html" style="text-decoration: none; color: inherit;">PRODUTOS</a></li>
-                        <li>SOBRE</li>
-                        <li><a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">CONTATO</a></li>
-                    </ul>
-                </nav>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="header-inner-content">
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <div class="logotipo"><img src="images/logo.png"></div> 
+            </a>
+        <div class="menu">
+            <nav>
+            <ul>
+                <li ><a href="index.html" style="text-decoration: none; color: inherit;">INICIO</a></li>
+                <li><a href="produtos.html" style="text-decoration: none; color: inherit;">PRODUTOS</a></li>
+                <li><a href="https://www.ufpb.br/dcx/contents/imagens/figuras/output_zvmmKf.gif/@@images/image.gif" style="text-decoration: none; color: inherit;">SOBRE</a></li>
+                <li><a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">CONTATO</a></li>
+            </ul>
+            </nav>
+        </div>
+        </nav>
+        <div class="nav-icon-container">
+            <img src="/images/cart.png" id="cart-icon" /> <!-- Ícone do Carrinho -->
+            <span id="cart-count">0</span> <!-- Exibe a quantidade de itens -->
+            <div id="cart-dropdown" style="display: none;"> <!-- Itens do carrinho -->
+                <ul id="cart-items"></ul>
+                <p>Total: R$ <span id="cart-total">0.00</span></p>
             </div>
-            <div class="nav-icon-container">
-                <img src="/images/cart.png" id="cart-icon" alt="Carrinho" />
-                <span id="cart-count">0</span> <!-- Exibe a quantidade de itens -->
-                <div id="cart-dropdown" style="display: none;">
-                    <ul id="cart-items"></ul>
-                    <p>Total: R$ <span id="cart-total">0.00</span></p>
-                </div>
-                <img src="/images/menu.png" class="menu-button" />
-            </div>
+            <img src="images/menu.png" class="menu-button" />
         </div>
     </div>
+</div>
 
     <main>
         <!-- Seção dos produtos de Camisetas -->

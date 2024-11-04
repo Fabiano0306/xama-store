@@ -6,7 +6,7 @@
     <title>Carrinho de Compras</title>
     <link rel="stylesheet" href="/Styles/globals.css">
     <style>
-          button {
+        button {
             background-color: #2c2c2c;
             color: #fff;
             border: none;
@@ -17,11 +17,9 @@
             transition: background-color 0.3s ease;
             margin: 10px;
         }
-
         button:hover {
             background-color: #004c94;
         }
-        
         body {
             font-family: Arial, sans-serif;
             padding: 0;
@@ -79,47 +77,30 @@
         }
         .button-container {
             display: flex;
-            justify-content: flex-start; /* Alinha os botões à esquerda */
+            justify-content: flex-start;
             margin-top: 20px;
         }
     </style>
 </head>
-<style>
-    img{
-        width: 100%;
-    }
-
-      
-</style>
 <body>
-    <script>
-         // Mesmo script do carrinho e menu da página index
-         const navbar = document.querySelector(".navbar");
-        const menuButton = document.querySelector(".menu-button");
-
-        menuButton.addEventListener("click", () => {
-            navbar.classList.toggle("show-menu");
-        });
-    </script>
-    <!-- Cabeçalho -->
     <div class="navbar">
         <div class="header-inner-content">
-            <div class="logotipo"><img src="images/logo.png" alt="Logo"></div> 
+            <div class="logotipo"><img src="images/logo.png" alt="Logo"></div>
             <div class="menu">
                 <nav>
                     <ul>
-                        <li><a href="index.html" style="text-decoration: none; color: inherit;">INICIO</a></li>
-                        <li><a href="produtos.html" style="text-decoration: none; color: inherit;">PRODUTOS</a></li>
-                        <li><a href="sobre.html" style="text-decoration: none; color: inherit;">SOBRE</a></li>
-                        <li><a href="https://wa.me/5547991906158" style="text-decoration: none; color: inherit;">CONTATO</a></li>
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="produtos.html">PRODUTOS</a></li>
+                        <li><a href="sobre.html">SOBRE</a></li>
+                        <li><a href="https://wa.me/5547991906158">CONTATO</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="nav-icon-container">
                 <img src="/images/cart.png" id="cart-icon" alt="Carrinho de Compras" />
-                <span id="cart-count">0</span> <!-- Exibe a quantidade de itens -->
-                <div id="cart-dropdown" style="display: none;"> <!-- Itens do carrinho -->
-                <img src="images/menu.png" class="menu-button" alt="Menu" />
+                <span id="cart-count">0</span>
+                <div id="cart-dropdown" style="display: none;">
+                    <img src="images/menu.png" class="menu-button" alt="Menu" />
                 </div>
             </div>
         </div>
@@ -130,163 +111,135 @@
         <!-- Itens do carrinho aparecerão aqui -->
     </ul>
     <p>Total: R$ <span id="cart-total">0.00</span></p>
-    
-    <!-- Container para os botões -->
+
     <div class="button-container">
         <button id="whatsapp-button">Enviar para WhatsApp</button>
         <button id="clear-cart">Esvaziar Carrinho</button>
-              <!-- Botão Voltar à Tela Inicial -->
-<button onclick="goToHome()">Voltar para Tela Inicial</button>
-
-<!-- Botão Menu Anterior -->
-<button onclick="goToPreviousMenu()">Voltar ao Menu Anterior</button>
+        <button onclick="goToHome()">Voltar para Tela Inicial</button>
+        <button onclick="goToPreviousMenu()">Voltar ao Menu Anterior</button>
     </div>
 
-    <!-- Rodapé -->
     <footer class="gray-background">
         <div class="page-inner-content footer-content">
-                <div class="download-options">
-                    <p>Entre em contato conosco</p>
-                    <p>Vendas somente pelo Whatsapp!</p> 
-                    <p><b><u>Consulte o estoque!</u></b></p>
-                    <div>
-                        <a href="https://wa.me/5547991906158" target="_blank">
-                            <img src="/images/app-store.png" alt="Acessar WhatsApp" />
-                        </a>
-                        <a href="https://www.instagram.com/deividarndtt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-                            <img src="/images/play-store.png" alt="Acessar Instagram" />
-                        </a>
-                    </div>
-                </div>
-                <div class="logo-footer">
-                    <div class="logo">
-                        <img src="/images/footer2.png" />
-                    </div>
-                    <p>Nosso objetivo é ajudar pessoas a terem estilo!</p>
-                </div>
-                <div class="links-footer">
-                    <h3><u>Links úteis</u></h3>
-                    <ul>
-                        <li>Nossa Política</li>
-                        <li>Cupons de Desconto</li>
-                        <li><a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">WhatsApp</a></li>
-                        <li><a href="https://www.instagram.com/deividarndtt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="text-decoration: none; color: inherit;">Instagram</a></li>
-                    </ul>
+            <div class="download-options">
+                <p>Entre em contato conosco</p>
+                <p>Vendas somente pelo Whatsapp!</p>
+                <p><b><u>Consulte o estoque!</u></b></p>
+                <div>
+                    <a href="https://wa.me/5547991906158" target="_blank">
+                        <img src="/images/app-store.png" alt="Acessar WhatsApp" />
+                    </a>
+                    <a href="https://www.instagram.com/deividarndtt" target="_blank">
+                        <img src="/images/play-store.png" alt="Acessar Instagram" />
+                    </a>
                 </div>
             </div>
-            <hr class="page-inner-content" />
-            <div class="page-inner-content copyright">
-                <p>Desenvolvido por <a href="https://www.instagram.com/nextfeel_/" target="_blank" style="text-decoration: none; color: inherit;"><u>Fabiano Santos</u></a> - Todos os Direitos Reservados a XAMÃ STORE</p>
+            <div class="logo-footer">
+                <div class="logo">
+                    <img src="/images/footer2.png" />
+                </div>
+                <p>Nosso objetivo é ajudar pessoas a terem estilo!</p>
             </div>
+            <div class="links-footer">
+                <h3><u>Links úteis</u></h3>
+                <ul>
+                    <li>Nossa Política</li>
+                    <li>Cupons de Desconto</li>
+                    <li><a href="https://wa.me/5547991906158" target="_blank">WhatsApp</a></li>
+                    <li><a href="https://www.instagram.com/deividarndtt" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="page-inner-content" />
+        <div class="page-inner-content copyright">
+            <p>Desenvolvido por <a href="https://www.instagram.com/nextfeel_/" target="_blank"><u>Fabiano Santos</u></a> - Todos os Direitos Reservados a XAMÃ STORE</p>
+        </div>
     </footer>
-
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-    const cartItems = document.getElementById('cart-items');
-    const cartTotal = document.getElementById('cart-total');
-    const clearCartButton = document.getElementById('clear-cart');
-    const whatsappButton = document.getElementById('whatsapp-button');
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            const clearCartButton = document.getElementById('clear-cart');
+            const whatsappButton = document.getElementById('whatsapp-button');
 
-    // Recuperar o carrinho do localStorage
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Função para atualizar a exibição do carrinho
-    function updateCartDisplay() {
-        cartItems.innerHTML = ''; // Limpar a lista atual de itens do carrinho
-        let total = 0;
+            function updateCartDisplay() {
+                cartItems.innerHTML = '';
+                let total = 0;
 
-        // Verificar se há itens no carrinho
-        if (cart.length === 0) {
-            cartItems.innerHTML = '<li>O carrinho está vazio.</li>';
-            cartTotal.textContent = '0.00';
-            return;
-        }
+                if (cart.length === 0) {
+                    cartItems.innerHTML = '<li>O carrinho está vazio.</li>';
+                    cartTotal.textContent = '0.00';
+                    return;
+                }
 
-        // Exibir cada item do carrinho
-        cart.forEach((item, index) => {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `
-                <img src="${item.image}" alt="${item.title}" style="width: 150px; height: auto; margin-right: 10px;">
-                ${item.title} - R$${item.price.toFixed(2)}
-                <button class="remove-button" data-index="${index}">Remover</button>
-            `;
-            cartItems.appendChild(listItem);
-            total += item.price;
+                cart.forEach((item, index) => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.title}" style="width: 150px; height: auto; margin-right: 10px;">
+                        ${item.title} - R$${item.price.toFixed(2)}
+                        <button class="remove-button" data-index="${index}">Remover</button>
+                    `;
+                    cartItems.appendChild(listItem);
+                    total += item.price;
+                });
+
+                cartTotal.textContent = total.toFixed(2);
+                updateCartCount();
+            }
+
+            function removeItemFromCart(index) {
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartDisplay();
+            }
+
+            cartItems.addEventListener('click', function(event) {
+                if (event.target.classList.contains('remove-button')) {
+                    const index = event.target.getAttribute('data-index');
+                    removeItemFromCart(index);
+                }
+            });
+
+            clearCartButton.addEventListener('click', function() {
+                cart = [];
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartDisplay();
+            });
+
+            whatsappButton.addEventListener('click', function() {
+                if (cart.length === 0) {
+                    alert("O carrinho está vazio.");
+                    return;
+                }
+
+                let message = "Olá, gostaria de comprar os seguintes itens:\n\n";
+                cart.forEach((item) => {
+                    message += `- ${item.title}: R$${item.price.toFixed(2)}\n`;
+                    message += `Imagem: ${item.image}\n`;
+                });
+                message += `\nTotal: R$${cart.reduce((total, item) => total + item.price, 0).toFixed(2)}`;
+
+                const whatsappUrl = `https://wa.me/5547991906158?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+
+            function updateCartCount() {
+                const cartCount = document.getElementById('cart-count');
+                cartCount.textContent = cart.length;
+            }
+
+            updateCartDisplay();
         });
 
-        // Atualizar o valor total no carrinho
-        cartTotal.textContent = total.toFixed(2);
-
-        // Atualizar a contagem de itens do carrinho
-        updateCartCount();
-    }
-
-    // Função para remover item do carrinho
-    function removeItemFromCart(index) {
-        cart.splice(index, 1);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartDisplay();
-    }
-
-    // Adiciona eventos de remoção aos botões
-    cartItems.addEventListener('click', function(event) {
-        if (event.target.classList.contains('remove-button')) {
-            const index = event.target.getAttribute('data-index');
-            removeItemFromCart(index);
-        }
-    });
-
-    // Esvaziar o carrinho
-    clearCartButton.addEventListener('click', function() {
-        cart = [];
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartDisplay();
-    });
-
-    // Função para enviar o carrinho para o WhatsApp
-    whatsappButton.addEventListener('click', function() {
-        if (cart.length === 0) {
-            alert("O carrinho está vazio.");
-            return;
-        }
-
-        let message = "Olá, gostaria de comprar os seguintes itens:\n\n";
-        cart.forEach((item) => {
-            message += `- ${item.title}: R$${item.price.toFixed(2)}\n`;
-            message += `Imagem: ${item.image}\n`; // Inclui o link da imagem do item
-        });
-        message += `\nTotal: R$${cart.reduce((total, item) => total + item.price, 0).toFixed(2)}`;
-
-        // Link do seu WhatsApp com a mensagem pré-preenchida
-        const whatsappUrl = `https://wa.me/5547991906158?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-
-        // Limpa o carrinho após enviar a mensagem
-        cart = []; // Limpa o array de carrinho
-        localStorage.removeItem('cart'); // Remove o carrinho do localStorage
-        updateCartDisplay(); // Atualiza a exibição do carrinho (esvazia na página)
-    });
-
-    // Atualiza o contador de itens do carrinho
-    function updateCartCount() {
-        const cartCount = document.getElementById('cart-count');
-        cartCount.textContent = cart.length;
-    }
-
-    // Inicializa a exibição do carrinho
-    updateCartDisplay();
-});
-
-    </script>
-
-    <script>
         function goToHome() {
-            window.location.href = "index.html"; // Ajuste o nome da página inicial
+            window.location.href = "index.html";
         }
 
         function goToPreviousMenu() {
-            window.history.back(); // Volta para a página anterior
+            window.history.back();
         }
     </script>
 </body>

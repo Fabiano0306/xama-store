@@ -56,9 +56,28 @@
             color: white;
             cursor: pointer;
         }
-
+        .product-image-container {
+            position: relative;
+            display: inline-block;
+        }
+        .search-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco translúcido */
+            border-radius: 30%; /* Bordas arredondadas */
+            padding: 5px;
+        }
+        .search-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #000;
+        }
+        .search-icon:hover svg {
+            fill: #033463;
+        }
     </style>
-    
 </head>
 <body>
     <!-- Navbar -->
@@ -71,7 +90,7 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">INICIO</a></li>
-                        <li><a href="produtos.html">PRODUTOS</a></li>
+                        <li><a href="index.html#produtos-secao" style="text-decoration: none; color: inherit;">PRODUTOS</a></li>
                         <li><a href="sobre.html">SOBRE</a></li>
                         <li><a href="contato.html" target="_blank">CONTATO</a></li>
                     </ul>
@@ -93,13 +112,22 @@
     <div class="page-inner-content">
         <h2 id="product-title"><u>CAMISETA ARMANI</u></h2>
         <div class="product">
-            <div class="product-image-container">
+            <div class="product-image-container" style="position: relative;">
                 <img id="product-image" src="/images/products/product-13.png" alt="Camiseta Armani" width="300" onclick="openZoom()">
+                <span class="search-icon" onclick="openZoom()">
+                    <!-- Ícone de lupa SVG -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2a8 8 0 105.68 13.68l4.32 4.32a1 1 0 001.42-1.42l-4.32-4.32A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z" fill="#000"/>
+                    </svg>
+                </span>
             </div>
-            <h3><u>PROMOÇÃO</u>: R$69.90</h3>
-            <P>(Clique para ampliar a imagem.)</P>
+            <h3><u>PROMOÇÃO</u>:</h3>
             <br></br>
-            <p id="product-description"><b>Descrição: Camiseta Armani de alta qualidade.</b></p>
+            <h2>R$69,90</h2>
+            <h4>À vista no PIX ganha 10% de desconto</h4>
+            <p>(Clique para ampliar a imagem.)</p>
+            <br></br>
+            <p id="product-description"><b>Descrição: Camiseta Armani - Malha Peruana de alta qualidade.</b></p>
             <p>Confira a disponibilidade no nosso <u>Whatsapp</u>!</p>
             <button id="add-to-cart" onclick="addToCart()">ADICIONAR AO CARRINHO</button>
         </div>
@@ -133,14 +161,14 @@
                 <ul>
                     <li>Nossa Política</li>
                     <li>Cupons de Desconto</li>
-                    <li><a href="https://wa.me/5547991906158" target="_blank">WhatsApp</a></li>
-                    <li><a href="https://www.instagram.com/deividarndtt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a></li>
+                    <li><a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">WhatsApp</a></li>
+                    <li><a href="https://www.instagram.com/deividarndtt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="text-decoration: none; color: inherit;">Instagram</a></li>
                 </ul>
             </div>
         </div>
         <hr class="page-inner-content" />
         <div class="page-inner-content copyright">
-            <p>Desenvolvido por <a href="https://www.instagram.com/nextfeel_/" target="_blank"><u>Fabiano Santos</u></a> - Todos os Direitos Reservados a XAMÃ STORE</p>
+            <p>Desenvolvido por <a href="https://www.instagram.com/nextfeel_/" target="_blank" style="text-decoration: none; color: inherit;"><u>Fabiano Santos</u></a> - Todos os Direitos Reservados a XAMÃ STORE</p>
         </div>
     </footer>
 
@@ -152,7 +180,7 @@
             const cartItem = {
                 title: productTitle,
                 image: productImage,
-                price: 69.90 // Altere o preço conforme necessário
+                price: 69.90
             };
 
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -188,20 +216,10 @@
             document.getElementById('zoom-image').style.display = 'none';
         }
 
-        // Função para alternar o menu em telas menores
         document.getElementById('menu-button').addEventListener('click', function() {
             const menu = document.getElementById('menu');
             menu.classList.toggle('show');
         });
     </script>
-        <script>
-            // Mesmo script do carrinho e menu da página index
-            const navbar = document.querySelector(".navbar");
-           const menuButton = document.querySelector(".menu-button");
-    
-           menuButton.addEventListener("click", () => {
-               navbar.classList.toggle("show-menu");
-           });
-       </script>
 </body>
 </html>

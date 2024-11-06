@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Produto - Camiseta Empório Armani</title>
+    <title>Detalhes do Produto - Boné NY</title>
     <link rel="stylesheet" href="/Styles/globals.css">
     <style>
         body {
@@ -122,13 +122,13 @@
 
     <!-- Conteúdo Principal -->
     <div class="page-inner-content">
-        <h2 id="product-title"><u>CAMISETA EMPÓRIO ARMANI</u></h2><br \>
-        <a href="camisas.html" class="back-arrow" style="text-decoration: none;">
+        <h2 id="product-title"><u>BONÉ NEW YORK - BRANCO</u></h2><br \>
+        <a href="bones.html" class="back-arrow" style="text-decoration: none;">
             <b>← <u>Voltar ao menu anterior</u></b>
         </a>
         <div class="product">
             <div class="product-image-container" style="position: relative;">
-                <img id="product-image" src="/images/products/product-25.png" alt="Camiseta Emporio Armani" width="300" onclick="openZoom()">
+                <img id="product-image" src="/images/products/product-2.png" alt="Boné lacoste" width="300" onclick="openZoom()">
                 <span class="search-icon" onclick="openZoom()">
                     <!-- Ícone de lupa SVG -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -138,11 +138,11 @@
             </div>
             <h3><u>PROMOÇÃO</u>:</h3>
             <br></br>
-            <h2>R$69,90</h2>
+            <h2>R$49,90</h2>
             <h4>À vista no PIX ganha 10% de desconto</h4>
             <p>(Clique para ampliar a imagem.)</p>
             <br></br>
-            <p id="product-description"><b>Descrição: Camiseta Empório Armani - Malha Peruana de alta qualidade.</b></p>
+            <p id="product-description"><b>Descrição:  Boné New York Branco - Símbolo Preto de alta qualidade.</b></p>
             <p>Confira a disponibilidade no nosso <u>Whatsapp</u>!</p>
             <button id="add-to-cart" onclick="addToCart()">ADICIONAR AO CARRINHO</button>
         </div>
@@ -195,7 +195,7 @@
             const cartItem = {
                 title: productTitle,
                 image: productImage,
-                price: 69.90
+                price: 49.90
             };
 
             let cart = JSON.parse(localStorage.getItem('cart')) || [];

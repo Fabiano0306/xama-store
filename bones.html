@@ -7,9 +7,17 @@
     <link rel="stylesheet" href="/Styles/globals.css" />
 </head>
 <style>
-    img{
-        width: 100%;
-    }
+.back-arrow {
+    font-size: 1.2em;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #000 !important; /* Cor inicial */
+    transition: color 0.3s; /* Suaviza a transição */
+}
+
+.back-arrow:hover {
+    color: #0084ff !important; /* Cor ao passar o mouse */
+}
 
       
 </style>
@@ -48,10 +56,13 @@
         <div class="page-inner-content">
             <h3 class="section-title">Bonés</h3>
             <div class="subtitle-underline1"></div>
+            <a href="index.html" class="back-arrow" style="text-decoration: none;">
+                <b>← <u>Voltar ao menu anterior</u></b>
+            </a>
             <div class="cols cols-4">
                 <!-- Produto 1 -->
                 <div class="product">
-                    <a href="produto.html" style="text-decoration: none; color: inherit;">
+                    <a href="bonelacostepreto.html" style="text-decoration: none; color: inherit;">
                     <img src="/images/products/product-4.png" alt="Boné Lacoste Preto" />
                     <p><b>BONÉ LACOSTE - PRETO</b></p>
                     <p>Clique para mais detalhes</p>
@@ -60,7 +71,7 @@
 
                 <!-- Produto 2 -->
                 <div class="product">
-                    <a href="produto.html" style="text-decoration: none; color: inherit;">
+                    <a href="bonelacostebranco.html" style="text-decoration: none; color: inherit;">
                     <img src="/images/products/product-5.png" alt="Boné Lacoste Branco" />
                     <p><b>BONÉ LACOSTE - BRANCO</b></p>
                     <p>Clique para mais detalhes</p>
@@ -69,20 +80,30 @@
 
                 <!-- Produto 3 -->
                 <div class="product">
-                    <a href="produtoboneny.html" style="text-decoration: none; color: inherit;">
-                    <img src="/images/products/product-6.png" alt="Boné NY Preto" />
-                    <p><b>BONÉ NY - PRETO</b></p>
-                    <p>Clique para mais detalhes</p>
-                    </a>
-                </div>
+                    <a href="bonelacostevermelho.html" style="text-decoration: none; color: inherit;">
+                        <img src="/images/products/product-14.png" alt="Boné Logo Lacoste" />
+                        <p><b>BONÉ LOGO LACOSTE</b></p>
+                        <p>Clique para mais detalhes</p>
+                        </a>
+                        </div>
 
                 <!-- Produto 4 -->
-                <div class="product">
-                    <a href="produto.html" style="text-decoration: none; color: inherit;">
-                    <img src="/images/products/product-14.png" alt="Boné Logo Lacoste" />
-                    <p><b>BONÉ LOGO LACOSTE</b></p>
-                    <p>Clique para mais detalhes</p>
-                    </a>
+                    <div class="product">
+                        <a href="bonenybranco.html" style="text-decoration: none; color: inherit;">
+                        <img src="/images/products/product-2.png" alt="Boné NY Preto" />
+                        <p><b>BONÉ NY - BRANCO</b></p>
+                        <p>Clique para mais detalhes</p>
+                        </a>
+                    </div>
+
+                     <!-- Produto 5 -->
+                     <div class="product">
+                        <a href="bonenypreto.html" style="text-decoration: none; color: inherit;">
+                        <img src="/images/products/product-6.png" alt="Boné NY Preto" />
+                        <p><b>BONÉ NY - PRETO</b></p>
+                        <p>Clique para mais detalhes</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -194,6 +215,6 @@ function openZoom() {
 function closeZoom() {
     document.getElementById('zoom-image').style.display = 'none'; // Esconde o contêiner de zoom
 }
-    </script>
+    </script>  
 </body>
 </html>

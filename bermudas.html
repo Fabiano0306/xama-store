@@ -191,5 +191,15 @@ function closeZoom() {
     document.getElementById('zoom-image').style.display = 'none'; // Esconde o contêiner de zoom
 }
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector(".menu-button");
+            const navbar = document.querySelector(".navbar");
+    
+            menuButton.addEventListener("click", () => {
+                navbar.classList.toggle("show-menu"); // Alterna a classe para mostrar/ocultar o menu
+            });
+        });
+    </script>
 </body>
 </html>

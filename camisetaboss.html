@@ -85,6 +85,18 @@
         .arrow:hover {
             color: #033463;
         }
+
+        .back-arrow {
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #000 !important; /* Cor inicial */
+    transition: color 0.3s; /* Suaviza a transição */
+}
+
+.back-arrow:hover {
+    color: #0084ff !important; /* Cor ao passar o mouse */
+}
     </style>
 </head>
 <body>
@@ -118,7 +130,10 @@
 
     <!-- Conteúdo Principal -->
     <div class="page-inner-content">
-        <h2 id="product-title"><u>CAMISETA BOSS</u></h2>
+        <h2 id="product-title"><u>CAMISETA BOSS</u></h2><br \>
+        <a href="camisasegipcias.html" class="back-arrow" style="text-decoration: none;">
+            <b>← <u>Voltar ao menu anterior</u></b>
+        </a>
         <div class="product">
             <div class="product-image-container" style="position: relative;">
                 <!-- Container das imagens com setas -->
@@ -252,6 +267,16 @@
         document.getElementById('menu-button').addEventListener('click', function() {
             const menu = document.getElementById('menu');
             menu.classList.toggle('show');
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector(".menu-button");
+            const navbar = document.querySelector(".navbar");
+    
+            menuButton.addEventListener("click", () => {
+                navbar.classList.toggle("show-menu"); // Alterna a classe para mostrar/ocultar o menu
+            });
         });
     </script>
 </body>

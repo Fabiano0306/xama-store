@@ -822,8 +822,7 @@ img {
 
     .cols-3{ /*PRODUTOS DE CIMA NO CINZA*/
             grid-template-columns: repeat(3, 110px);
-            padding-left: 20px;
-            
+            padding-left: 25px; 
         }
 
         .cols-4 img{
@@ -853,7 +852,7 @@ img {
         border-radius: 20px;
         box-shadow: 10px 0px 30px #000000;
     }
-    
+
     img {
         max-width: 100%;
         height: auto; /* Mantém a proporção da imagem */
@@ -861,7 +860,7 @@ img {
 
     .cols-3{ /*PRODUTOS DE CIMA NO CINZA*/
         grid-template-columns: repeat(3, 120px);
-        padding-left: 30px;
+        padding-left: 40px;
     }
 
     .cols-4{ /*NOSSOS PRODUTOS*/

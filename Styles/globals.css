@@ -744,7 +744,6 @@ hr.page-inner-content {
         max-width: 130px; /* Largura máxima opcional para limitar o tamanho dos vídeos */
         border-radius: 10px;
         margin-bottom: 18px;
-        padding-left: 40px;
     }
 }
 
@@ -787,7 +786,7 @@ hr.page-inner-content {
 /* Para telas menores que 1200px (tablets e laptops) */
 @media (max-width: 1200px) {
     .cols {
-        grid-template-columns: 1fr 1fr; /* Produtos em duas colunas */
+        grid-template-columns: 4fr 1fr; /* Produtos em duas colunas */
     }
 }
 
@@ -842,14 +841,13 @@ img {
         height: auto; /* Mantém a proporção da imagem */
     }
 
-    .cols-3{
-        grid-template-columns: repeat(1, 1fr);
-        width: 280px;
-        height: auto;
+    .cols-3{ /*PRODUTOS DE CIMA NO CINZA*/
+        grid-template-columns: repeat(3, 140px);
+        
     }
 
-    .cols-4{
-        grid-template-columns: repeat(1, 1fr);
+    .cols-4{ /*NOSSOS PRODUTOS*/
+        grid-template-columns: repeat(3, 3fr);
     }
 
     .product-name, .product-price, .rate{

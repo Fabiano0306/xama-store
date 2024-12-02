@@ -567,19 +567,23 @@ hr.page-inner-content {
     padding: 4rem 1rem;
 }
 
-.cols-3{
-    grid-template-columns: repeat(4, 1fr); /* adicionar ou remover mais imagens do meio */
-    gap: 3rem;
+
+.cols-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    grid-auto-rows: auto; /* Ajusta automaticamente a altura das linhas */
+    gap: 2rem; /* Espaçamento entre os itens */
 }
 
 .cols-3 img{
-    max-width: 100%; 
+    max-width: 70%;
+    height: auto; 
     box-shadow: 2px 0px 20px #fff;
     border-radius: 20px;
 }
 
 .cols-4 img{
-    max-width: 100%;
+    max-width: 60%;
     border-radius: 20px;
     box-shadow: 10px 0px 30px #000000;
 }
@@ -785,10 +789,11 @@ hr.page-inner-content {
 
 /* Para telas menores que 1200px (tablets e laptops) */
 @media (max-width: 1200px) {
-    .cols {
-        grid-template-columns: 4fr 1fr; /* Produtos em duas colunas */
+    .cols { /*ITENS DE DENTRO DA TELA CINZA PC*/
+        grid-template-columns: repeat(3, 1fr); /* Produtos em duas colunas */
     }
 }
+
 
 .texto-voltar-menu {
     font-size: 18px;
@@ -800,10 +805,12 @@ img {
     height: auto; /* Mantém a proporção da imagem */
 }
 
-.cols {
+.cols-4 { /*ITENS DO NOSSOS PRODUTOS TELA PC*/
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Três colunas em telas maiores */
-    gap: 10px;
+    max-width: 100%;
+    height: auto;
+    gap: 20px;
 }
 
 
@@ -813,10 +820,9 @@ img {
         grid-template-columns: 1fr; /* Apenas uma coluna no celular */
     }
 
-    .cols-3{
-        .cols-3{ /*PRODUTOS DE CIMA NO CINZA*/
-            grid-template-columns: repeat(3, 120px);
-            padding-left: 30px;
+    .cols-3{ /*PRODUTOS DE CIMA NO CINZA*/
+            grid-template-columns: repeat(3, 110px);
+            padding-left: 15px;
         }
 
 }

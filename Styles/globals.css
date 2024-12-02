@@ -814,10 +814,10 @@ img {
     }
 
     .cols-3{
-        grid-template-columns: repeat(1, 1fr);
-        width: 280px;
-        height: auto;
-    }
+        .cols-3{ /*PRODUTOS DE CIMA NO CINZA*/
+            grid-template-columns: repeat(3, 120px);
+            padding-left: 30px;
+        }
 
 }
 
@@ -842,8 +842,8 @@ img {
     }
 
     .cols-3{ /*PRODUTOS DE CIMA NO CINZA*/
-        grid-template-columns: repeat(3, 140px);
-        
+        grid-template-columns: repeat(3, 120px);
+        padding-left: 30px;
     }
 
     .cols-4{ /*NOSSOS PRODUTOS*/

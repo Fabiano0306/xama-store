@@ -815,8 +815,8 @@ img {
     }
 
     .cols-3{
-        grid-template-columns: repeat(2, 2fr);
-        width: 450px;
+        grid-template-columns: repeat(1, 1fr);
+        width: 280px;
         height: auto;
     }
 
@@ -843,13 +843,13 @@ img {
     }
 
     .cols-3{
-        grid-template-columns: repeat(2, 2fr);
-        width: 450px;
+        grid-template-columns: repeat(1, 1fr);
+        width: 280px;
         height: auto;
     }
 
     .cols-4{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .product-name, .product-price, .rate{

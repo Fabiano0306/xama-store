@@ -818,7 +818,6 @@ img {
         grid-template-columns: repeat(2, 2fr);
         width: 450px;
         height: auto;
-        padding-left: 50px;
     }
 
 }
@@ -847,7 +846,6 @@ img {
         grid-template-columns: repeat(2, 2fr);
         width: 450px;
         height: auto;
-        padding-left: 50px;
     }
 
     .cols-4{

@@ -822,7 +822,8 @@ img {
 
     .cols-3{ /*PRODUTOS DE CIMA NO CINZA*/
             grid-template-columns: repeat(3, 110px);
-            padding-left: 25px; 
+            padding-left: 40px;
+            gap: 0.1rem;
         }
 
         .cols-4 img{
@@ -861,6 +862,7 @@ img {
     .cols-3{ /*PRODUTOS DE CIMA NO CINZA*/
         grid-template-columns: repeat(3, 120px);
         padding-left: 40px;
+        gap: 0.1rem;
     }
 
     .cols-4{ /*NOSSOS PRODUTOS*/

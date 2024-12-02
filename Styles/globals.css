@@ -617,6 +617,11 @@ hr.page-inner-content {
     margin-bottom: 18px;
 }
 
+.texto-voltar-menu {
+    font-size: 20px;
+    padding-left: 15px;
+}
+
 .section-title{
     text-align: center;
     margin-top: 4rem;
@@ -716,6 +721,31 @@ hr.page-inner-content {
     #cart-items img {
         width: 80px; /* Tamanho ajustado para telas menores */
     }
+
+    .texto-voltar-menu {
+        font-size: 12px;
+        padding-left: 15px;
+    }
+
+    .video-container {
+        display: flex;
+        gap: 10px; /* Espaçamento entre os vídeos */
+        flex-wrap: wrap; /* Permite que os vídeos quebrem linha se a tela for menor */
+        padding-top: 20px;
+        padding-left: 25px;
+        box-shadow: 20px 10px 20px #000000;  
+        background-color: #2c2c2c;  
+        border-radius: 10px;
+        margin-bottom: 35px;
+    }
+    
+    .video-container video {
+        flex: 1 1 30%; /* Define a largura de cada vídeo em 30%, ajustável */
+        max-width: 130px; /* Largura máxima opcional para limitar o tamanho dos vídeos */
+        border-radius: 10px;
+        margin-bottom: 18px;
+        padding-left: 40px;
+    }
 }
 
 
@@ -761,6 +791,11 @@ hr.page-inner-content {
     }
 }
 
+.texto-voltar-menu {
+    font-size: 18px;
+    padding-left: 15px;
+}
+
 img {
     max-width: 100%;
     height: auto; /* Mantém a proporção da imagem */
@@ -772,10 +807,20 @@ img {
     gap: 10px;
 }
 
+
+
 @media (max-width: 768px) {
     .cols {
         grid-template-columns: 1fr; /* Apenas uma coluna no celular */
     }
+
+    .cols-3{
+        grid-template-columns: repeat(2, 2fr);
+        width: 450px;
+        height: auto;
+        padding-left: 50px;
+    }
+
 }
 
 img {
@@ -788,13 +833,21 @@ img {
         font-size: 1rem;
     }
 
+    .texto-voltar-menu {
+        font-size: 12px;
+        padding-left: 15px;
+    }
+
     img {
         max-width: 100%;
         height: auto; /* Mantém a proporção da imagem */
     }
 
     .cols-3{
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 2fr);
+        width: 450px;
+        height: auto;
+        padding-left: 50px;
     }
 
     .cols-4{

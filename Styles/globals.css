@@ -583,7 +583,7 @@ hr.page-inner-content {
 }
 
 .cols-4 img{
-    max-width: 60%;
+    max-width: 70%;
     border-radius: 20px;
     box-shadow: 10px 0px 30px #000000;
 }
@@ -822,9 +822,15 @@ img {
 
     .cols-3{ /*PRODUTOS DE CIMA NO CINZA*/
             grid-template-columns: repeat(3, 110px);
-            padding-left: 15px;
+            padding-left: 20px;
+            
         }
 
+        .cols-4 img{
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 10px 0px 30px #000000;
+        }
 }
 
 img {
@@ -842,6 +848,12 @@ img {
         padding-left: 15px;
     }
 
+    .cols-4 img{
+        max-width: 100%;
+        border-radius: 20px;
+        box-shadow: 10px 0px 30px #000000;
+    }
+    
     img {
         max-width: 100%;
         height: auto; /* Mantém a proporção da imagem */
@@ -854,6 +866,8 @@ img {
 
     .cols-4{ /*NOSSOS PRODUTOS*/
         grid-template-columns: repeat(3, 3fr);
+        max-width: 100%;
+        height: auto; /* Mantém a proporção da imagem */
     }
 
     .product-name, .product-price, .rate{

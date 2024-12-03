@@ -14,46 +14,11 @@
         .page-inner-content {
             padding: 20px;
         }
-        .products-container {
+        .product {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .product-item {
-            position: relative;
-            text-align: center;
-        }
-        .product-item img {
-            width: 200px;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        .select-icon {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 20px;
-            height: 20px;
-            background-color: transparent;
-            border: 2px solid #0084FF;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            transition: background-color 0.3s ease;
-        }
-        .select-icon.selected {
-            background-color: #0084FF;
-        }
-        .product-description {
-            margin-top: 10px;
-        }
-        #product-text {
             margin-top: 20px;
-            text-align: center;
         }
         #add-to-cart {
             margin-top: 20px;
@@ -66,17 +31,72 @@
         #add-to-cart:hover {
             background-color: #033463;
         }
-        /* CSS Responsivo */
-        @media screen and (max-width: 800px) {
-            .products-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .product-item img {
-                width: 100%;
-                max-width: 300px;
-            }
+        .zoom-image {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
+        .zoom-image img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid white;
+        }
+        .zoom-image .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        .product-image-container {
+            position: relative;
+            display: inline-block;
+        }
+        .search-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 30%;
+            padding: 5px;
+        }
+        .search-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #000;
+        }
+        .search-icon:hover svg {
+            fill: #033463;
+        }
+        .arrow {
+            font-size: 30px;
+            cursor: pointer;
+            color: #2b2b2b;
+        }
+        .arrow:hover {
+            color: #033463;
+        }
+
+        .back-arrow {
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #000 !important; /* Cor inicial */
+    transition: color 0.3s; /* Suaviza a transição */
+}
+
+.back-arrow:hover {
+    color: #0084ff !important; /* Cor ao passar o mouse */
+}
     </style>
 </head>
 <body>
@@ -110,38 +130,40 @@
 
     <!-- Conteúdo Principal -->
     <div class="page-inner-content">
-        <h2 id="product-title"><u>CAMISETA BOSS URSO</u></h2>
-        <h5 id="product-title"><p><b>Clique nas imagens para selecioná-las</b></h5>
-            <br></br>
-            <br></br>
-        <!-- Produtos -->
-        <div class="products-container">
-            <div class="product-item" onclick="toggleSelection(this, 'Marinho', '/images/products/egipicias/product-1.png')">
-                <div class="select-icon"></div>
-                <img src="/images/products/egipicias/product-1.png" alt="Marinho">
-                <p class="product-description"><b>Marinho</b></p>
-            </div>
-            <div class="product-item" onclick="toggleSelection(this, 'Preta', '/images/products/egipicias/product-19.png')">
-                <div class="select-icon"></div>
-                <img src="/images/products/egipicias/product-19.png" alt="Preta">
-                <p class="product-description"><b>Preta</b></p>
-            </div>
-            <div class="product-item" onclick="toggleSelection(this, 'Marrom', '/images/products/egipicias/product-10.png')">
-                <div class="select-icon"></div>
-                <img src="/images/products/egipicias/product-10.png" alt="Marrom">
-                <p class="product-description"><b>Marrom</b></p>
-            </div>
+        <h2 id="product-title"><u>CAMISETA BOSS URSO</u></h2><br \>
+        <a href="camisasegipcias.html" class="back-arrow" style="text-decoration: none;">
+            <div class="texto-voltar-menu">
+                <b>← Menu anterior</b>
         </div>
-        <br></br>
-        <!-- Informações abaixo das imagens -->
-        <div id="product-text">
-            <h3><u>PROMOÇÃO:</u> R$89,90 CADA</h3>
-            <p>À vista no PIX ganha 10% de desconto.</p>
+        </a>
+        <div class="product">
+            <div class="product-image-container" style="position: relative;">
+                <!-- Container das imagens com setas -->
+                <div id="image-slider" style="display: flex; align-items: center;">
+                    <img id="product-image" src="/images/products/egipicias/product-1.png" alt="Camiseta Boss Urso" width="300" onclick="openZoom()">
+                </div>
+                <span class="search-icon" onclick="openZoom()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2a8 8 0 105.68 13.68l4.32 4.32a1 1 0 001.42-1.42l-4.32-4.32A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z" fill="#000"/>
+                    </svg>
+                </span>
+            </div>
+            <h3><u>PROMOÇÃO</u>:</h3>
             <br></br>
-            <p><b>Descrição:</b> Camiseta Boss Urso - Cores Variadas - Malha Egípcia de alta qualidade.</p>
+            <h2>R$89,90</h2>
+            <h4>À vista no PIX ganha 10% de desconto</h4>
+            <p>(Clique para ampliar ou na seta para mudar a imagem.)</p>
+            <br></br>
+            <p id="product-description"><b>Descrição: Camiseta Boss Urso - Malha Egípcia de alta qualidade.</b></p>
+            <p>Confira a disponibilidade no nosso <u>Whatsapp</u>!</p>
+            <button id="add-to-cart" onclick="addToCart()">ADICIONAR AO CARRINHO</button>
         </div>
+    </div>
 
-        <button id="add-to-cart" onclick="addToCart()">ADICIONAR AO CARRINHO</button>
+    <!-- Imagem de Zoom -->
+    <div class="zoom-image" id="zoom-image" onclick="closeZoom()">
+        <span class="close" onclick="closeZoom()">&times;</span>
+        <img id="zoomed-image" src="" alt="Zoomed Image">
     </div>
 
     <!-- Rodapé -->
@@ -177,34 +199,83 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        let selectedItems = [];
+        let currentImageIndex = 0;
+        const images = [    
+        document.getElementById('product-image'), 
+        document.getElementById('product-image-2'), 
+        document.getElementById('product-image-3')
+];
 
-        function toggleSelection(element, modelName, imageUrl) {
-            const icon = element.querySelector('.select-icon');
-            if (icon.classList.contains('selected')) {
-                icon.classList.remove('selected');
-                selectedItems = selectedItems.filter(item => item.title !== modelName);
-            } else {
-                icon.classList.add('selected');
-                selectedItems.push({ title: modelName, image: imageUrl, price: 89.90 });
-            }
+        function nextImage() {
+            images[currentImageIndex].style.display = 'none';
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].style.display = 'block';
+        }
+
+        function previousImage() {
+            images[currentImageIndex].style.display = 'none';
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            images[currentImageIndex].style.display = 'block';
         }
 
         function addToCart() {
-            if (selectedItems.length === 0) {
-                alert('Por favor, selecione ao menos um modelo antes de adicionar ao carrinho.');
-                return;
-            }
+            const productImage = document.getElementById('product-image').src;
+            const productTitle = document.getElementById('product-title').textContent;
+
+            const cartItem = {
+                title: productTitle,
+                image: productImage,
+                price: 89.90
+            };
 
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart = cart.concat(selectedItems);
+            cart.push(cartItem);
             localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
 
-            alert('Os itens selecionados foram adicionados ao carrinho!');
-            window.location.href = 'cart.html'; 
+            alert(`${productTitle} adicionado ao carrinho!`);
         }
+
+        function updateCartCount() {
+            const cartCount = document.getElementById('cart-count');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cartCount.textContent = cart.length;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+        });
+
+        document.getElementById('cart-icon').addEventListener('click', function() {
+            window.location.href = 'cart.html';
+        });
+
+        function openZoom() {
+            const zoomedImage = document.getElementById('zoomed-image');
+            const productImage = images[currentImageIndex].src;
+            zoomedImage.src = productImage;
+            document.getElementById('zoom-image').style.display = 'flex';
+        }
+
+        function closeZoom() {
+            document.getElementById('zoom-image').style.display = 'none';
+        }
+
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector(".menu-button");
+            const navbar = document.querySelector(".navbar");
+    
+            menuButton.addEventListener("click", () => {
+                navbar.classList.toggle("show-menu"); // Alterna a classe para mostrar/ocultar o menu
+            });
+        });
     </script>
 </body>
 </html>

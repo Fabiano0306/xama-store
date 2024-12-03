@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto - Camiseta Boss Urso</title>
+    <link rel="stylesheet" href="/Styles/globals.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .page-inner-content {
+            padding: 20px;
+        }
+        .products-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .product-item {
+            position: relative;
+            text-align: center;
+        }
+        .product-item img {
+            width: 200px;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .select-icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border: 2px solid #0084FF;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        .select-icon.selected {
+            background-color: #0084FF;
+        }
+        .product-description {
+            margin-top: 10px;
+        }
+        #product-text {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #add-to-cart {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2b2b2b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #add-to-cart:hover {
+            background-color: #033463;
+        }
+        /* CSS Responsivo */
+        @media screen and (max-width: 800px) {
+            .products-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product-item img {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="header-inner-content">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <div class="logotipo"><img src="images/logo.png"></div>
+            </a>
+            <div class="menu" id="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="index.html#produtos-secao" style="text-decoration: none; color: inherit;">PRODUTOS</a></li>
+                        <li><a href="sobre.html">SOBRE</a></li>
+                        <li><a href="contato.html" target="_blank">CONTATO</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-icon-container">
+                <img src="/images/cart.png" id="cart-icon" />
+                <span id="cart-count">0</span>
+                <div id="cart-dropdown" style="display: none;">
+                    <ul id="cart-items"></ul>
+                    <p>Total: R$ <span id="cart-total">0.00</span></p>
+                </div>
+                <img src="images/menu.png" class="menu-button" id="menu-button" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="page-inner-content">
+        <h2 id="product-title"><u>CAMISETA BOSS URSO</u></h2>
+        <h5 id="product-title"><p><b>Clique nas imagens para selecioná-las</b></h5>
+            <br></br>
+            <br></br>
+        <!-- Produtos -->
+        <div class="products-container">
+            <div class="product-item" onclick="toggleSelection(this, 'Marinho', '/images/products/egipicias/product-1.png')">
+                <div class="select-icon"></div>
+                <img src="/images/products/egipicias/product-1.png" alt="Marinho">
+                <p class="product-description"><b>Marinho</b></p>
+            </div>
+            <div class="product-item" onclick="toggleSelection(this, 'Preta', '/images/products/egipicias/product-19.png')">
+                <div class="select-icon"></div>
+                <img src="/images/products/egipicias/product-19.png" alt="Preta">
+                <p class="product-description"><b>Preta</b></p>
+            </div>
+            <div class="product-item" onclick="toggleSelection(this, 'Marrom', '/images/products/egipicias/product-10.png')">
+                <div class="select-icon"></div>
+                <img src="/images/products/egipicias/product-10.png" alt="Marrom">
+                <p class="product-description"><b>Marrom</b></p>
+            </div>
+        </div>
+        <br></br>
+        <!-- Informações abaixo das imagens -->
+        <div id="product-text">
+            <h3><u>PROMOÇÃO:</u> R$89,90 CADA</h3>
+            <p>À vista no PIX ganha 10% de desconto.</p>
+            <br></br>
+            <p><b>Descrição:</b> Camiseta Boss Urso - Cores Variadas - Malha Egípcia de alta qualidade.</p>
+        </div>
+
+        <button id="add-to-cart" onclick="addToCart()">ADICIONAR AO CARRINHO</button>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="gray-background">
+        <div class="page-inner-content footer-content">
+            <div class="download-options">
+                <p>Entre em contato conosco</p>
+                <p>Vendas somente pelo Whatsapp</p>
+                <div>
+                    <a href="https://wa.me/5547991906158" target="_blank"><img src="/images/app-store.png" alt="WhatsApp" /></a>
+                    <a href="https://www.instagram.com/deividarndtt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="/images/play-store.png" alt="Instagram" /></a>
+                </div>
+            </div>
+            <div class="logo-footer">
+                <div class="logo">
+                    <img src="/images/footer2.png" alt="Logo Footer" />
+                </div>
+                <p>Nosso objetivo é ajudar pessoas a terem estilo!</p>
+            </div>
+            <div class="links-footer">
+                <h3>Links úteis</h3>
+                <ul>
+                    <li>Nossa Política</li>
+                    <li>Cupons de Desconto</li>
+                    <li><a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">WhatsApp</a></li>
+                    <li><a href="https://www.instagram.com/deividarndtt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="text-decoration: none; color: inherit;">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="page-inner-content" />
+        <div class="page-inner-content copyright">
+            <p>Desenvolvido por <a href="https://www.instagram.com/nextfeel_/" target="_blank" style="text-decoration: none; color: inherit;"><u>Fabiano Santos</u></a> - Todos os Direitos Reservados a XAMÃ STORE</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        let selectedItems = [];
+
+        function toggleSelection(element, modelName, imageUrl) {
+            const icon = element.querySelector('.select-icon');
+            if (icon.classList.contains('selected')) {
+                icon.classList.remove('selected');
+                selectedItems = selectedItems.filter(item => item.title !== modelName);
+            } else {
+                icon.classList.add('selected');
+                selectedItems.push({ title: modelName, image: imageUrl, price: 89.90 });
+            }
+        }
+
+        function addToCart() {
+            if (selectedItems.length === 0) {
+                alert('Por favor, selecione ao menos um modelo antes de adicionar ao carrinho.');
+                return;
+            }
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.concat(selectedItems);
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            alert('Os itens selecionados foram adicionados ao carrinho!');
+            window.location.href = 'cart.html'; 
+        }
+    </script>
+</body>
+</html>

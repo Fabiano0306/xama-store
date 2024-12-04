@@ -13,8 +13,8 @@ body{
     position: relative; /* Para posicionar o pseudo-elemento ::after */
     text-decoration: none; /* Remove a sublinhado padrão */
     color: inherit; /* Mantém a cor do texto */
-    font-size: 18px; /* Ajuste conforme necessário */
-    padding: 5px 0; /* Espaçamento no texto */
+    font-size: 1.1250rem; /* Ajuste conforme necessário */
+    padding: 0.3125rem 0; /* Espaçamento no texto */
 }
 
 /* Pseudo-elemento para criar a linha sublinhada com efeito */
@@ -24,7 +24,7 @@ body{
     bottom: 0; /* Alinha a linha na parte inferior do texto */
     left: 0;
     width: 0; /* Começa com a linha com largura 0 */
-    height: 2px; /* Espessura da linha */
+    height: 0.1250rem; /* Espessura da linha */
     background-color: #007bff; /* Cor da linha (pode alterar) */
     transition: width 0.4s ease-in-out; /* Transição suave */
 }
@@ -35,7 +35,7 @@ body{
 }
 
 /* Responsividade para telas menores */
-@media (max-width: 768px) {
+@media (max-width: 48.0000rem) {
     .navbar ul {
         display: flex;
         flex-direction: column;
@@ -43,13 +43,13 @@ body{
     }
 
     .navbar ul li {
-        margin-bottom: 15px; /* Espaçamento entre os itens do menu */
+        margin-bottom: 0.9375rem; /* Espaçamento entre os itens do menu */
     }
 
     /* Para criar uma animação crescente com efeito de sublinhado */
     .navbar ul li a::after {
         background-color: #007bff; /* Cor da linha */
-        height: 2px;
+        height: 0.1250rem;
         width: 0; /* A linha começa com largura 0 */
         transition: width 0.5s ease-out; /* Animação de crescimento */
     }
@@ -64,12 +64,12 @@ button {
     background-color: #2c2c2c; /* Cor de fundo */
     color: #fff; /* Cor do texto */
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 0.6250rem 1.2500rem;
+    border-radius: 0.3125rem;
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease;
-    margin: 10px; /* Espaço entre os botões */
+    margin: 0.6250rem; /* Espaço entre os botões */
 }
 
 button:hover {
@@ -97,7 +97,7 @@ button:hover {
 /* Efeito de sombra gradual */
 @keyframes shadow-appear {
     from { text-shadow: 0 0 rgba(0, 0, 0, 0); }
-    to { text-shadow: 0 0 20px rgba(0, 0, 0, 0.5); } /* Sombra suave */
+    to { text-shadow: 0 0 1.2500rem rgba(0, 0, 0, 0.5); } /* Sombra suave */
 }
 
 /* Adiciona a animação de sombra */
@@ -106,7 +106,7 @@ button:hover {
 }
 
 .header-inner-content{
-    max-width: 1600px;
+    max-width: 100.0000rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -117,7 +117,7 @@ button:hover {
     flex-wrap: wrap; /* Permite que os itens quebrem para uma nova linha se necessário */
     justify-content: space-between; /* Distribui os itens entre os cantos */
     align-items: center; /* Centraliza os itens verticalmente */
-    padding: 10px 20px; /* Espaçamento */
+    padding: 0.6250rem 1.2500rem; /* Espaçamento */
     background-color: #333; /* Cor de fundo (ajuste conforme necessário) */
     position: relative;
     z-index: 1000; /* Garante que a barra fique acima de outros elementos */
@@ -127,12 +127,12 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* Ajuste de largura máxima */
+    max-width: 75.0000rem; /* Ajuste de largura máxima */
     margin: 0 auto; /* Centraliza o conteúdo */
 }
 
 .navbar li {
-    margin-left: 20px;
+    margin-left: 1.2500rem;
 }
 
 .navbar a {
@@ -142,11 +142,11 @@ button:hover {
 
 .logotipo{
     width: 50%;
-    margin-right: 250px; /* Empurra o logotipo para a esquerda */
+    margin-right: 15.6250rem; /* Empurra o logotipo para a esquerda */
 }
 
 .navbar .logotipo img {
-    max-width: 130px; /* Ajusta o tamanho do logotipo */
+    max-width: 8.1250rem; /* Ajusta o tamanho do logotipo */
 }
 
 .navbar{
@@ -154,7 +154,7 @@ button:hover {
     padding: 1rem;
     position: sticky;
     top: 0;
-    box-shadow: 20px 0px 40px #000000;
+    box-shadow: 1.2500rem 0.0000rem 2.5000rem #000000;
     z-index: 99;
 }
 
@@ -182,12 +182,12 @@ nav ul{
 .nav-icon-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espaço entre os ícones (carrinho, etc) */
-    margin-left: 200px;
+    gap: 0.6250rem; /* Espaço entre os ícones (carrinho, etc) */
+    margin-left: 12.5000rem;
 }
 
 .nav-icon-container img {
-    max-width: 30px; /* Ajusta o tamanho do ícone do carrinho */
+    max-width: 1.8750rem; /* Ajusta o tamanho do ícone do carrinho */
     cursor: pointer;
 }
 
@@ -202,7 +202,7 @@ nav ul li{
 }
 
 nav ul li:hover{
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem);
     transition: all 0.2s;
     font-weight: bold;
 }
@@ -222,7 +222,7 @@ nav ul li:hover{
 .menu ul {
     display: flex;
     list-style: none;
-    gap: 100px; /* Espaço entre os itens do menu */
+    gap: 6.2500rem; /* Espaço entre os itens do menu */
 }
 
 .menu ul li {
@@ -267,13 +267,13 @@ header{
     background-color: #2c2c2c;
     border: none;
     cursor: pointer;
-    padding:10px 20px;
-    border-radius: 9999px;
+    padding:0.6250rem 1.2500rem;
+    border-radius: 624.9375rem;
     color: #fff;
     font-weight: 500;
     font-size: 1rem;
     transition: all 0.2s;
-    margin-top: 20px;
+    margin-top: 1.2500rem;
 }
 
 .header-bottom-side-left button:hover{
@@ -295,7 +295,7 @@ header{
 
 
 /* Alinhamento dos botões para mobile */
-@media (max-width: 768px) {
+@media (max-width: 48.0000rem) {
     .button-container {
         display: flex;
         flex-direction: column;
@@ -304,17 +304,17 @@ header{
 
     button {
         width: 80%; /* Ajuste para que os botões ocupem 80% da largura da tela */
-        font-size: 14px; /* Tamanho do texto menor para telas pequenas */
+        font-size: 0.8750rem; /* Tamanho do texto menor para telas pequenas */
     }
 }
 
 .logotipo{
     width: 50%;
-    margin-right: 120px; /* Empurra o logotipo para a esquerda */
+    margin-right: 7.5000rem; /* Empurra o logotipo para a esquerda */
 }
 
-/* Mobile design (para telas menores que 768px) */
-@media (max-width: 768px) {
+/* Mobile design (para telas menores que 48.0000rem) */
+@media (max-width: 48.0000rem) {
 
     .header-bottom-side-left h2 {
         font-size: 1.5rem; /* Diminui mais a fonte no mobile */
@@ -324,12 +324,12 @@ header{
     .header-bottom-side-left p {
         font-size: 0.9rem; /* Ajusta a frase debaixo */
         text-align: center; /* Centraliza no mobile */
-        padding: 10px; /* Dá espaço ao redor para não colar nas bordas */
+        padding: 0.6250rem; /* Dá espaço ao redor para não colar nas bordas */
     }
 
     .navbar {
         flex-direction: row; /* Empilha os elementos no mobile */
-        padding: 20px;
+        padding: 1.2500rem;
     }
 
     .logotipo {
@@ -346,9 +346,9 @@ header{
     align-items: center;
     background-color:#2c2c2c; /* Define a cor de fundo do menu */
     color: rgb(255, 255, 255); /* Define a cor do texto */
-    padding: 10px; /* Adiciona padding */
+    padding: 0.6250rem; /* Adiciona padding */
     position: absolute; /* Para que o menu fique sobre outros elementos */
-    top: 50px; /* Ajuste conforme necessário */
+    top: 3.1250rem; /* Ajuste conforme necessário */
     right: 0; /* Alinha à direita */
     width: 100%; /* Ocupa toda a largura do container */
     display: none; /* Inicialmente escondido */
@@ -356,23 +356,23 @@ header{
     }
 
     .nav-icon-container {
-        margin-top: 10px; /* Adiciona espaço acima dos ícones */
+        margin-top: 0.6250rem; /* Adiciona espaço acima dos ícones */
     }
 
     .nav-icon-container img {
-        max-width: 25px; /* Diminui um pouco os ícones no mobile */
+        max-width: 1.5625rem; /* Diminui um pouco os ícones no mobile */
     }
 }
 
 /* Ocultar o menu padrão e mostrar o botão de menu no mobile */
-@media (max-width: 768px) {
+@media (max-width: 48.0000rem) {
     .menu ul {
         display: none; /* Esconde o menu padrão */
         flex-direction: column;
         align-items: center;
         background-color: #2c2c2c;
         position: absolute;
-        top: 50px;
+        top: 3.1250rem;
         right: 0;
         width: 100%;
         z-index: 1000;
@@ -403,10 +403,10 @@ header{
     display: none;
 }
 
-@media (max-width: 800px){
+@media (max-width: 50.0000rem){
     .logo{
         font-size: 1.2rem;
-        width: 230px;
+        width: 14.3750rem;
         margin: auto;
     }
 
@@ -425,7 +425,7 @@ header{
         position: absolute;
         background-color: #2c2c2c;
         width: 100%;
-        top: 46px;
+        top: 2.8750rem;
         display: none;
     }
 
@@ -446,14 +446,14 @@ header{
 
 #cart {
     background-color: #f0f0f0;
-    padding: 15px;
-    margin-top: 20px;
-    border: 1px solid #ddd;
+    padding: 0.9375rem;
+    margin-top: 1.2500rem;
+    border: 0.0625rem solid #ddd;
 }
 
 #cart h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 1.1250rem;
+    margin-bottom: 0.6250rem;
 }
 
 #cart-items {
@@ -462,26 +462,26 @@ header{
 }
 
 #cart-items li {
-    margin-bottom: 10px;
+    margin-bottom: 0.6250rem;
 }
 
 /* Seleciona as imagens dentro do carrinho */
 #cart-items img {
-    border-radius: 10px; /* Define bordas arredondadas */
-    width: 120px; /* Ajuste o tamanho conforme necessário */
+    border-radius: 0.6250rem; /* Define bordas arredondadas */
+    width: 7.5000rem; /* Ajuste o tamanho conforme necessário */
     height: auto; /* Mantém a proporção da imagem */
 }
 
 #cart-total {
     font-weight: bold;
-    font-size: 25px;
+    font-size: 1.5625rem;
 }
 
 .buy-button {
     background-color: #2c2c2c;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 0.6250rem;
     cursor: pointer;
 }
 
@@ -493,21 +493,21 @@ header{
     background-color: #0084ff;
     color: white;
     border-radius: 50%;
-    padding: 5px 10px;
+    padding: 0.3125rem 0.6250rem;
     position: relative;
-    top: -15px;
-    left: -15px;
+    top: -0.9375rem;
+    left: -0.9375rem;
 }
 
 #cart-dropdown {
     position: absolute;
-    top: 50px;
-    right: 10px;
-    width: 200px;
+    top: 3.1250rem;
+    right: 0.6250rem;
+    width: 12.5000rem;
     background-color: white;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    border: 0.0625rem solid #ddd;
+    box-shadow: 0 0.1250rem 0.6250rem rgba(0, 0, 0, 0.1);
+    padding: 0.6250rem;
     z-index: 1000;
 }
 
@@ -518,7 +518,7 @@ header{
 }
 
 #cart-dropdown ul li {
-    margin-bottom: 10px;
+    margin-bottom: 0.6250rem;
 }
 
 #cart-dropdown p {
@@ -534,28 +534,28 @@ main{
 
 .gray-background{
     background-color: #2c2c2c;
-    box-shadow: 20px 0px 40px #000000;
+    box-shadow: 1.2500rem 0.0000rem 2.5000rem #000000;
 }
 
 
 
 .page-inner-content{
-    max-width: 1600px;
+    max-width: 100.0000rem;
     margin: 0 auto;
 }
 
 hr.page-inner-content {
     border: underline;
-    border-top: 0px dashed #ffffff; /* Ajuste a cor conforme necessário */
-    border-left: 0px;
-    margin: 20px 0; /* Ajuste a margem para posicionamento */
-    max-width: 2000px;
-    border-right: 0px;
+    border-top: 0.0000rem dashed #ffffff; /* Ajuste a cor conforme necessário */
+    border-left: 0.0000rem;
+    margin: 1.2500rem 0; /* Ajuste a margem para posicionamento */
+    max-width: 125.0000rem;
+    border-right: 0.0000rem;
 }
 
 .page-inner-content hr {
     border: none;
-    border-top: 1px dashed #333;
+    border-top: 0.0625rem dashed #333;
     width: 100%;
 }
 
@@ -578,14 +578,14 @@ hr.page-inner-content {
 .cols-3 img{
     max-width: 70%;
     height: auto; 
-    box-shadow: 2px 0px 20px #fff;
-    border-radius: 20px;
+    box-shadow: 0.1250rem 0.0000rem 1.2500rem #fff;
+    border-radius: 1.2500rem;
 }
 
 .cols-4 img{
     max-width: 70%;
-    border-radius: 20px;
-    box-shadow: 10px 0px 30px #000000;
+    border-radius: 1.2500rem;
+    box-shadow: 0.6250rem 0.0000rem 1.8750rem #000000;
 }
 
 .cols-4{
@@ -599,31 +599,31 @@ hr.page-inner-content {
 }
 
 .cols>*:hover{
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem);
 }
 
 .video-container {
     display: flex;
-    gap: 10px; /* Espaçamento entre os vídeos */
+    gap: 0.6250rem; /* Espaçamento entre os vídeos */
     flex-wrap: wrap; /* Permite que os vídeos quebrem linha se a tela for menor */
-    padding-top: 20px;
-    padding-left: 25px;
-    box-shadow: 20px 10px 20px #000000;  
+    padding-top: 1.2500rem;
+    padding-left: 1.5625rem;
+    box-shadow: 1.2500rem 0.6250rem 1.2500rem #000000;  
     background-color: #2c2c2c;  
-    border-radius: 10px;
-    margin-bottom: 35px;
+    border-radius: 0.6250rem;
+    margin-bottom: 2.1875rem;
 }
 
 .video-container video {
     flex: 1 1 30%; /* Define a largura de cada vídeo em 30%, ajustável */
-    max-width: 300px; /* Largura máxima opcional para limitar o tamanho dos vídeos */
-    border-radius: 10px;
-    margin-bottom: 18px;
+    max-width: 18.7500rem; /* Largura máxima opcional para limitar o tamanho dos vídeos */
+    border-radius: 0.6250rem;
+    margin-bottom: 1.1250rem;
 }
 
 .texto-voltar-menu {
-    font-size: 20px;
-    padding-left: 15px;
+    font-size: 1.2500rem;
+    padding-left: 0.9375rem;
 }
 
 .section-title{
@@ -633,68 +633,68 @@ hr.page-inner-content {
 }
 
 .subtitle-underline{
-    width: 240px;
-    height: 5px;
+    width: 15.0000rem;
+    height: 0.3125rem;
     background: #0084ff;
-    border-radius: 9999px;
-    margin: 8px auto auto;
+    border-radius: 624.9375rem;
+    margin: 0.5000rem auto auto;
 }
 
 .subtitle-underline1{
-    width: 100px;
-    height: 5px;
+    width: 6.2500rem;
+    height: 0.3125rem;
     background: #0084ff;
-    border-radius: 9999px;
-    margin: 8px auto auto;
-    margin-bottom: 8px;
+    border-radius: 624.9375rem;
+    margin: 0.5000rem auto auto;
+    margin-bottom: 0.5000rem;
 }
 .subtitle-underline2{
-    width: 175px;
-    height: 5px;
+    width: 10.9375rem;
+    height: 0.3125rem;
     background: #0084ff;
-    border-radius: 9999px;
-    margin: 8px auto auto;
-    margin-bottom: 8px;
+    border-radius: 624.9375rem;
+    margin: 0.5000rem auto auto;
+    margin-bottom: 0.5000rem;
 }
 
 .subtitle-underline3{
-    width: 130px;
-    height: 5px;
+    width: 8.1250rem;
+    height: 0.3125rem;
     background: #0084ff;
-    border-radius: 9999px;
-    margin: 8px auto auto;
-    margin-bottom: 8px;
+    border-radius: 624.9375rem;
+    margin: 0.5000rem auto auto;
+    margin-bottom: 0.5000rem;
 }
 
 .subtitle-underline4{
-    width: 450px;
-    height: 5px;
+    width: 28.1250rem;
+    height: 0.3125rem;
     background: #0084ff;
-    border-radius: 9999px;
-    margin: 8px auto auto;
-    margin-bottom: 8px;
+    border-radius: 624.9375rem;
+    margin: 0.5000rem auto auto;
+    margin-bottom: 0.5000rem;
 }
 
 .subtitle-underline5{
-    width: 420px;
-    height: 5px;
+    width: 26.2500rem;
+    height: 0.3125rem;
     background: #0084ff;
-    border-radius: 9999px;
-    margin: 8px auto auto;
-    margin-bottom: 8px;
+    border-radius: 624.9375rem;
+    margin: 0.5000rem auto auto;
+    margin-bottom: 0.5000rem;
 }
 
 .subtitle-underline6{
-    width: 330px;
-    height: 5px;
+    width: 20.6250rem;
+    height: 0.3125rem;
     background: #0084ff;
-    border-radius: 9999px;
-    margin: 1px 2px auto;
-    margin-bottom: 8px;
+    border-radius: 624.9375rem;
+    margin: 0.0625rem 0.1250rem auto;
+    margin-bottom: 0.5000rem;
 }
 
 .carrinho {
-    font-size: 14px;
+    font-size: 0.8750rem;
     font-style: oblique;
     font-family:'Courier New', Courier, monospace ;
     padding-top: 2rem;
@@ -733,79 +733,79 @@ hr.page-inner-content {
 }
 
 .exclusive-container img{
-    max-width: 500px;
-    box-shadow: 2px 0px 20px #fff;
-    border-radius: 30px;
+    max-width: 31.2500rem;
+    box-shadow: 0.1250rem 0.0000rem 1.2500rem #fff;
+    border-radius: 1.8750rem;
 }
 
 /* Media Queries */
 
 /* Responsividade para mobile */
-@media (max-width: 768px) {
+@media (max-width: 48.0000rem) {
     #cart-items img {
-        width: 80px; /* Tamanho ajustado para telas menores */
+        width: 5.0000rem; /* Tamanho ajustado para telas menores */
     }
 
     .texto-voltar-menu {
-        font-size: 12px;
-        padding-left: 15px;
+        font-size: 0.7500rem;
+        padding-left: 0.9375rem;
     }
 
     .subtitle-underline{
-        width: 140px;
-        height: 5px;
+        width: 8.7500rem;
+        height: 0.3125rem;
         background: #0084ff;
-        border-radius: 9999px;
-        margin: 8px auto auto;
+        border-radius: 624.9375rem;
+        margin: 0.5000rem auto auto;
     }
 
     .subtitle-underline1{
-        width: 60px;
-        height: 5px;
+        width: 3.7500rem;
+        height: 0.3125rem;
         background: #0084ff;
-        border-radius: 9999px;
-        margin: 8px auto auto;
-        margin-bottom: 8px;
+        border-radius: 624.9375rem;
+        margin: 0.5000rem auto auto;
+        margin-bottom: 0.5000rem;
     }
 
     .subtitle-underline2{
-        width: 100px;
-        height: 5px;
+        width: 6.2500rem;
+        height: 0.3125rem;
         background: #0084ff;
-        border-radius: 9999px;
-        margin: 8px auto auto;
-        margin-bottom: 8px;
+        border-radius: 624.9375rem;
+        margin: 0.5000rem auto auto;
+        margin-bottom: 0.5000rem;
     }
 
     .subtitle-underline4{
-        width: 250px;
-        height: 5px;
+        width: 15.6250rem;
+        height: 0.3125rem;
         background: #0084ff;
-        border-radius: 9999px;
-        margin: 8px auto auto;
-        margin-bottom: 8px;
+        border-radius: 624.9375rem;
+        margin: 0.5000rem auto auto;
+        margin-bottom: 0.5000rem;
     }
 
     .subtitle-underline5{
-        width: 240px;
-        height: 5px;
+        width: 15.0000rem;
+        height: 0.3125rem;
         background: #0084ff;
-        border-radius: 9999px;
-        margin: 8px auto auto;
-        margin-bottom: 8px;
+        border-radius: 624.9375rem;
+        margin: 0.5000rem auto auto;
+        margin-bottom: 0.5000rem;
     }
 
     .subtitle-underline6{
-        width: 280px;
-        height: 5px;
+        width: 17.5000rem;
+        height: 0.3125rem;
         background: #0084ff;
-        border-radius: 9999px;
-        margin: 1px 2px auto;
-        margin-bottom: 8px;
+        border-radius: 624.9375rem;
+        margin: 0.0625rem 0.1250rem auto;
+        margin-bottom: 0.5000rem;
     }
 
     .carrinho {
-        font-size: 12px;
+        font-size: 0.7500rem;
         font-style: oblique;
         font-family:'Courier New', Courier, monospace ;
         padding-top: 2rem;
@@ -813,28 +813,28 @@ hr.page-inner-content {
     
     .video-container {
         display: flex;
-        gap: 10px; /* Espaçamento entre os vídeos */
+        gap: 0.6250rem; /* Espaçamento entre os vídeos */
         flex-wrap: wrap; /* Permite que os vídeos quebrem linha se a tela for menor */
-        padding-top: 20px;
-        padding-left: 25px;
-        box-shadow: 20px 10px 20px #000000;  
+        padding-top: 1.2500rem;
+        padding-left: 1.5625rem;
+        box-shadow: 1.2500rem 0.6250rem 1.2500rem #000000;  
         background-color: #2c2c2c;  
-        border-radius: 10px;
-        margin-bottom: 35px;
+        border-radius: 0.6250rem;
+        margin-bottom: 2.1875rem;
     }
     
     .video-container video {
         flex: 1 1 30%; /* Define a largura de cada vídeo em 30%, ajustável */
-        max-width: 100px; /* Largura máxima opcional para limitar o tamanho dos vídeos */
+        max-width: 6.2500rem; /* Largura máxima opcional para limitar o tamanho dos vídeos */
         height: auto;
-        border-radius: 10px;
-        margin-bottom: 18px;
+        border-radius: 0.6250rem;
+        margin-bottom: 1.1250rem;
     }
 }
 
 
-/* Para telas menores que 768px (celulares) */
-@media (max-width: 768px) {
+/* Para telas menores que 48.0000rem (celulares) */
+@media (max-width: 48.0000rem) {
     .navbar ul {
         display: flex;
         flex-direction: column;
@@ -856,20 +856,20 @@ hr.page-inner-content {
     }
 
     button {
-        padding: 10px 20px;
+        padding: 0.6250rem 1.2500rem;
         font-size: 1rem;
     }
     
-    @media (max-width: 768px) {
+    @media (max-width: 48.0000rem) {
         button {
-            padding: 8px 16px;
+            padding: 0.5000rem 1.0000rem;
             font-size: 0.9rem;
         }
     }
 }
 
-/* Para telas menores que 1200px (tablets e laptops) */
-@media (max-width: 1200px) {
+/* Para telas menores que 75.0000rem (tablets e laptops) */
+@media (max-width: 75.0000rem) {
     .cols { /*ITENS DE DENTRO DA TELA CINZA PC*/
         grid-template-columns: repeat(3, 1fr); /* Produtos em duas colunas */
     }
@@ -877,8 +877,8 @@ hr.page-inner-content {
 
 
 .texto-voltar-menu {
-    font-size: 18px;
-    padding-left: 15px;
+    font-size: 1.1250rem;
+    padding-left: 0.9375rem;
 }
 
 img {
@@ -891,26 +891,26 @@ img {
     grid-template-columns: repeat(4, 1fr); /* Três colunas em telas maiores */
     max-width: 100%;
     height: auto;
-    gap: 20px;
+    gap: 1.2500rem;
 }
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 48.0000rem) {
     .cols {
         grid-template-columns: 1fr; /* Apenas uma coluna no celular */
     }
 
     .cols-3{ /*PRODUTOS DE CIMA NO CINZA*/
-            grid-template-columns: repeat(3, 110px);
-            padding-left: 40px;
+            grid-template-columns: repeat(3, 6.8750rem);
+            padding-left: 2.5000rem;
             gap: 1rem;
         }
 
         .cols-4 img{
             max-width: 100%;
-            border-radius: 20px;
-            box-shadow: 10px 0px 30px #000000;
+            border-radius: 1.2500rem;
+            box-shadow: 0.6250rem 0.0000rem 1.8750rem #000000;
         }
 }
 
@@ -919,20 +919,20 @@ img {
     height: auto; /* Mantém a proporção da imagem */
 }
 
-@media (max-width: 800px){
+@media (max-width: 50.0000rem){
     .section-title{
         font-size: 1rem;
     }
 
     .texto-voltar-menu {
-        font-size: 12px;
-        padding-left: 15px;
+        font-size: 0.7500rem;
+        padding-left: 0.9375rem;
     }
 
     .cols-4 img{
         max-width: 100%;
-        border-radius: 20px;
-        box-shadow: 10px 0px 30px #000000;
+        border-radius: 1.2500rem;
+        box-shadow: 0.6250rem 0.0000rem 1.8750rem #000000;
     }
 
     img {
@@ -941,8 +941,8 @@ img {
     }
 
     .cols-3{ /*PRODUTOS DE CIMA NO CINZA*/
-        grid-template-columns: repeat(3, 120px);
-        padding-left: 40px;
+        grid-template-columns: repeat(3, 7.5000rem);
+        padding-left: 2.5000rem;
         gap: 1rem;
     }
 
@@ -982,7 +982,7 @@ img {
     justify-content: center;
     flex-basis: 30%;
     text-align: center;
-    box-shadow: 0 0 15px #afafaf;
+    box-shadow: 0 0 0.9375rem #afafaf;
     padding: 1rem;
     border-radius: 1rem;
     cursor: pointer;
@@ -990,11 +990,11 @@ img {
 }
 
 .testemunha:hover{
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem);
 }
 
 .testemunha p{
-    margin: 5px 0;
+    margin: 0.3125rem 0;
 }
 
 .testemunha p:first-child{
@@ -1011,7 +1011,7 @@ img {
 
 /* media queries */
 
-@media (max-width: 800px){
+@media (max-width: 50.0000rem){
     .testemunhas{
         flex-direction: column;
     }
@@ -1045,7 +1045,7 @@ img {
 }
 
 .download-options>div img{
-    width: 40px;
+    width: 2.5000rem;
 }
 
 .logo-footer{
@@ -1065,7 +1065,7 @@ img {
     font-weight: bold;
     margin-bottom: 0.1rem;
     cursor: pointer;
-    transform: translateY(-2px);
+    transform: translateY(-0.1250rem);
     transition: all 0.2s;
 }
 
@@ -1077,7 +1077,7 @@ img {
 
 /* media queries */
 
-@media (max-width: 800px){
+@media (max-width: 50.0000rem){
     .footer-content{
         display: inline;
         font-size: 0.8rem;
@@ -1092,7 +1092,7 @@ img {
     }
 
     .download-options>div img{
-        width: 25px;
+        width: 1.5625rem;
     }
 
     .copyright{

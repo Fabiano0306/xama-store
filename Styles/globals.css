@@ -8,6 +8,20 @@ body{
     font-family: 'arial';
 }
 
+.delivery-message {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 50%;
+}
+
+
 /* Estilos para o menu mobile */
 .navbar ul li a {
     position: relative; /* Para posicionar o pseudo-elemento ::after */

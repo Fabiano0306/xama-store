@@ -1,0 +1,16 @@
+[
+    {
+        "name": "CAMISETAS",
+        "price": 89.90,
+        "image": "/images/products/product-19.png",
+        "description": "Malha Peruana",
+        "link": "camisas.html"
+    },
+    {
+        "name": "CAMISETAS",
+        "price": 89.90,
+        "image": "/images/products/product-49.png",
+        "description": "Malha Egípcia",
+        "link": "camisasegipcias.html"
+    }
+]

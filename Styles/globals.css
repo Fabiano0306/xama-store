@@ -8,18 +8,155 @@ body{
     font-family: 'arial';
 }
 
-.delivery-message {
-    text-align: center;
-    margin: 20px auto;
+.valor-total-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
-    background-color: #f9f9f9;
-    color: #333;
+    border-top: 2px solid #004c94;
+    border-bottom: 2px solid #004c94;
+    border-left: 2px solid #004c94;
+    border-right: 2px solid #004c94;
+    margin-top: 20px;
+    background-color: #f1f1f1; /* Fundo diferenciado */
+    border-radius: 10px;
+}
+
+.valor-total {
+    text-align: right; /* Alinha à direita por padrão */
     font-size: 1.2rem;
     font-weight: bold;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 50%;
+    color: #004c94; /* Cor principal */
 }
+
+/* Responsividade para tablets e telas menores */
+@media (max-width: 768px) {
+    .valor-total-container {
+        flex-direction: column; /* Coloca os elementos em coluna */
+        align-items: flex-start; /* Alinha à esquerda */
+        padding: 15px;
+    }
+
+    .valor-total {
+        text-align: left; /* Texto alinhado à esquerda */
+        font-size: 1rem; /* Tamanho da fonte reduzido */
+        margin-top: 10px;
+    }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+    .valor-total-container {
+        padding: 10px;
+    }
+
+    .valor-total {
+        font-size: 0.9rem; /* Fonte menor */
+        line-height: 1.4; /* Melhor espaçamento entre linhas */
+    }
+}
+
+
+.total-text {
+    color: #004c94;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.total-value {
+    color: #1eb941;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+.delivery-message {
+    text-align: center;
+    background-color: #f7f9fc;
+    padding: 20px;
+    border: 2px solid #004c94;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-message h2 {
+    color: #004c94;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.delivery-message p {
+    color: #333;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.delivery-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.delivery-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #004c94;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 140px;
+    text-align: center;
+}
+
+.delivery-button img.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.delivery-button.whatsapp {
+    background-color: #25D366;
+}
+
+.delivery-button.instagram {
+    background-color: #E1306C;
+}
+
+.delivery-button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+    .delivery-message h2 {
+        font-size: 1.2rem;
+    }
+
+    .delivery-message p {
+        font-size: 0.9rem;
+    }
+
+    .delivery-button {
+        font-size: 0.9rem;
+        width: 120px;
+        padding: 8px 10px;
+    }
+
+    .delivery-links {
+        gap: 8px;
+    }
+}
+
 
 
 /* Estilos para o menu mobile */
@@ -306,6 +443,97 @@ header{
     margin: 0 auto;
 }
 
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f7f9fc;
+    border: 2px solid #004c94;
+    border-radius: 10px;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.action-button {
+    background-color: #004c94;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    min-width: 200px;
+}
+
+.action-button:hover {
+    background-color: #0077cc;
+    transform: scale(1.05);
+}
+
+.action-button.whatsapp {
+    background-color: #25D366;
+}
+
+.action-button.whatsapp:hover {
+    background-color: #1eb941;
+}
+
+.action-button.clear-cart {
+    background-color: #ff6666;
+}
+
+.action-button.clear-cart:hover {
+    background-color: #e63946;
+}
+
+.action-button.home {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.action-button.home:hover {
+    background-color: #e6ac00;
+}
+
+.action-button.previous-menu {
+    background-color: #6c757d;
+}
+
+.action-button.previous-menu:hover {
+    background-color: #5a6268;
+}
+
+@media (max-width: 480px) {
+    .action-button {
+        font-size: 0.9rem;
+        padding: 12px 16px;
+        min-width: 160px;
+    }
+
+    .button-container {
+        gap: 10px;
+        padding: 15px;
+    }
+}
+
+button .icon {
+    width: 20px; /* Tamanho do ícone */
+    height: auto;
+    margin-right: 8px; /* Espaçamento entre ícone e texto */
+    vertical-align: middle;
+}
+
+.action-button i {
+    margin-right: 8px; /* Espaçamento entre ícone e texto */
+    font-size: 1.2rem; /* Tamanho do ícone */
+    vertical-align: middle;
+}
 
 
 /* Alinhamento dos botões para mobile */
@@ -473,17 +701,92 @@ header{
 #cart-items {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Espaçamento entre os itens */
 }
 
 #cart-items li {
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #004c94; /* Borda destacada */
+    border-radius: 10px; /* Bordas arredondadas */
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Seleciona as imagens dentro do carrinho */
+#cart-items li:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumentar a sombra */
+}
+
 #cart-items img {
-    border-radius: 10px; /* Define bordas arredondadas */
-    width: 120px; /* Ajuste o tamanho conforme necessário */
-    height: auto; /* Mantém a proporção da imagem */
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px; /* Bordas arredondadas para a imagem */
+}
+
+#cart-items .remove-button {
+    margin-top: 10px;
+    background-color: #ff6666;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#cart-items .remove-button:hover {
+    background-color: #e63946; /* Escurecer ao passar o mouse */
+}
+
+.total-container {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Adaptações para telas menores */
+@media (max-width: 768px) {
+    #cart-items {
+        grid-template-columns: 1fr; /* Um item por linha */
+    }
+
+    #cart-items li {
+        padding: 15px; /* Reduzir o padding */
+    }
+
+    #cart-items img {
+        max-width: 100px; /* Reduzir o tamanho das imagens */
+    }
+
+    #cart-items .remove-button {
+        padding: 8px 12px; /* Botões menores */
+    }
+}
+
+@media (max-width: 480px) {
+    #cart-items li {
+        padding: 10px; /* Reduzir ainda mais o padding */
+        font-size: 0.9rem; /* Diminuir o texto */
+    }
+
+    #cart-items img {
+        max-width: 80px; /* Reduzir as imagens em telas pequenas */
+    }
+
+    #cart-items .remove-button {
+        padding: 6px 10px;
+        font-size: 0.8rem; /* Texto menor no botão */
+    }
 }
 
 #cart-total {
@@ -775,12 +1078,92 @@ hr.page-inner-content {
     font-size: 1.6rem;
 }
 
-.product{
-    color: #2c2c2c;
-    margin-bottom: 1rem;
+.product {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #004c94; /* Destaque com borda */
+    border-radius: 10px; /* Bordas arredondadas */
+    background-color: #f9f9f9; /* Fundo leve */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.product:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+.product img {
+    width: 100%;
+    max-width: 200px; /* Limita o tamanho da imagem */
+    height: auto;
+    border-radius: 8px; /* Imagens com cantos arredondados */
+    margin-bottom: 15px; /* Espaçamento abaixo da imagem */
+}
+
+.product p {
+    margin: 5px 0;
+    font-size: 1rem; /* Tamanho padrão da fonte */
+    color: #333; /* Cor de texto principal */
+    line-height: 1.5; /* Espaçamento entre linhas */
+}
+
+
+.product p:first-of-type {
+    font-size: 1.2rem; /* Tamanho maior para o título */
+    font-weight: bold; /* Negrito no título */
+    color: #004c94; /* Destaque na cor */
+}
+
+.product a {
+    text-decoration: none;
+    color: inherit; /* Mantém as cores definidas */
+}
+
+.product a:hover {
+    text-decoration: underline; /* Destaca o link ao passar o mouse */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .product {
+        padding: 15px;
+    }
+
+    .product img {
+        max-width: 150px; /* Reduz o tamanho da imagem */
+    }
+
+    .product p {
+        font-size: 0.9rem; /* Reduz tamanho da fonte */
+    }
+
+    .product p:first-of-type {
+        font-size: 0.9rem; /* Ajusta o título */
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        padding: 10px;
+    }
+
+    .product img {
+        max-width: 120px; /* Imagens menores */
+    }
+
+    .product p {
+        font-size: 0.8rem; /* Texto menor */
+    }
+
+    .product p:first-of-type {
+        font-size: 0.9rem; /* Ajusta o título */
+    }
+}
+
 
 .product-name{
     font-weight: 600;

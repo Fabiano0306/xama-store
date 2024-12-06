@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho de Compras</title>
     <link rel="stylesheet" href="/Styles/globals.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         button {
             background-color: #2c2c2c;
@@ -110,28 +111,49 @@
     <div class="subtitle-underline6"></div>
     <ul id="cart-items">
         <!-- Itens do carrinho aparecerão aqui -->
-    </ul>
-    <div class="valor-total">
-    <p><u><b>Valor Final</b></u>: <b>R$</b><span id="cart-total">0.00</span></p>
-</div>
-</div>
-
-<div class="delivery-message">
-    Entregamos para todo o Brasil, confira as condições diretamente com um de nossos vendedores!<br></br>
-    Clique em uma das opções abaixo para ser redirecionado:
-    <br></br>
-    <div>
-    <a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">
-    <p><u>WHATSAPP</u></a> | <a href="https://www.instagram.com/deividarndtt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="text-decoration: none; color: inherit;"> <b><u>INSTAGRAM</u></b></p></a>
+    </ul></br></br>
+    <div class="valor-total-container">
+        <div class="valor-total">
+            <p class="total-text"><u><b>Valor Total:</b></u></p>
+            <p class="total-value"><b>R$</b><span id="cart-total"><b>0.00</b></span></p>
+        </div>       
     </div>
+    
+</div>
 </div>
 
+<div class="main-layout">
     <div class="button-container">
-        <button id="whatsapp-button">Enviar para WhatsApp</button>
-        <button id="clear-cart">Esvaziar Carrinho</button>
-        <button onclick="goToHome()">Voltar para Tela Inicial</button>
-        <button onclick="goToPreviousMenu()">Voltar ao Menu Anterior</button>
+        <button id="whatsapp-button" class="action-button whatsapp">
+            <i class="fab fa-whatsapp icon"></i> Enviar para WhatsApp
+        </button>
+        <button id="clear-cart" class="action-button clear-cart">
+            <i class="fas fa-trash-alt icon"></i> Esvaziar Carrinho
+        </button>
+        <button onclick="goToHome()" class="action-button home">
+            <i class="fas fa-home icon"></i> Voltar para Tela Inicial
+        </button>
+        <button onclick="goToPreviousMenu()" class="action-button previous-menu">
+            <i class="fas fa-arrow-left icon"></i> Voltar ao Menu Anterior
+        </button>
     </div>
+
+    <div class="delivery-message">border-top: 2px solid #004c94;
+        <h2>Entregamos para Todo o Brasil!</h2>
+        <p>Consulte as condições diretamente com nossos vendedores.</p>
+        <p><b>Clique em uma das opções abaixo para nos contatar:</b></p>
+        <div class="delivery-links">
+            <a href="https://wa.me/5547991906158" target="_blank" class="delivery-button whatsapp">
+                <img src="/images/app-store.png" alt="WhatsApp" class="icon"> WhatsApp
+            </a>
+            <a href="https://www.instagram.com/deividarndtt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="delivery-button instagram">
+                <img src="/images/play-store.png" alt="Instagram" class="icon"> Instagram
+            </a>
+        </div>
+    </div>
+</div>
+
+
 
     <footer class="gray-background">
         <div class="page-inner-content footer-content">
@@ -255,6 +277,9 @@
         function goToPreviousMenu() {
             window.history.back();
         }
+
+     
+
     </script>
 </body>
 </html>

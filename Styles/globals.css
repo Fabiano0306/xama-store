@@ -1076,6 +1076,15 @@ hr.page-inner-content {
     margin-bottom: 8px;
 }
 
+.subtitle-underline9{
+    width: 490px;
+    height: 5px;
+    background: #0084ff;
+    border-radius: 9999px;
+    margin: 8px auto auto;
+    margin-bottom: 8px;
+}
+
 .carrinho {
     font-size: 14px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; 
@@ -1277,6 +1286,15 @@ hr.page-inner-content {
 
     .subtitle-underline8{
         width: 200px;
+        height: 5px;
+        background: #0084ff;
+        border-radius: 9999px;
+        margin: 8px auto auto;
+        margin-bottom: 8px;
+    }
+
+    .subtitle-underline9{
+        width: 275px;
         height: 5px;
         background: #0084ff;
         border-radius: 9999px;

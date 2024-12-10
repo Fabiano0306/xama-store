@@ -1392,8 +1392,6 @@ hr.page-inner-content {
 img {
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: 0 auto;
 }
 
 
@@ -1410,9 +1408,6 @@ img {
 @media (max-width: 768px) {
     .cols {
         grid-template-columns: 1fr; /* Apenas uma coluna no celular */
-        max-width: 100%; /* Garante que o grid ocupe toda a largura disponível */
-        margin: 0 auto; /* Centraliza o grid */
-        
     }
 
     .cols-3 {

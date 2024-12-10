@@ -883,6 +883,8 @@ hr.page-inner-content {
     display: grid;
     justify-content: space-evenly;
     padding: 4rem 1rem;
+    max-width: 100%; /* Garante que o grid ocupe toda a largura disponível */
+    margin: 0 auto; /* Centraliza o grid */
 }
 
 
@@ -1408,6 +1410,9 @@ img {
 @media (max-width: 768px) {
     .cols {
         grid-template-columns: 1fr; /* Apenas uma coluna no celular */
+        max-width: 100%; /* Garante que o grid ocupe toda a largura disponível */
+        margin: 0 auto; /* Centraliza o grid */
+        
     }
 
     .cols-3 {

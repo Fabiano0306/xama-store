@@ -1217,6 +1217,15 @@ hr.page-inner-content {
         width: 80px; /* Tamanho ajustado para telas menores */
     }
 
+#image-slider {
+    flex-direction: flex; /* Imagens e setas em coluna */
+    align-items: center;
+}
+
+#image-slider img {
+    width: 100%; /* Garantir que as imagens ocupem o espaço */
+}
+
     .texto-voltar-menu {
         font-size: 12px;
         padding-left: 15px;
@@ -1380,8 +1389,11 @@ hr.page-inner-content {
 
 img {
     max-width: 100%;
-    height: auto; /* Mantém a proporção da imagem */
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
+
 
 .cols-4 { /*ITENS DO NOSSOS PRODUTOS TELA PC*/
     display: grid;

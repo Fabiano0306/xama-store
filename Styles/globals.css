@@ -8,6 +8,10 @@ body{
     font-family: 'arial';
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .valor-total-container {
     display: flex;
     justify-content: space-between;
@@ -1087,6 +1091,33 @@ hr.page-inner-content {
     margin-bottom: 8px;
 }
 
+.subtitle-underline10{
+    width: 300px;
+    height: 5px;
+    background: #0084ff;
+    border-radius: 9999px;
+    margin: 8px auto auto;
+    margin-bottom: 8px;
+}
+
+.subtitle-underline11{
+    width: 190px;
+    height: 5px;
+    background: #0084ff;
+    border-radius: 9999px;
+    margin: 8px auto auto;
+    margin-bottom: 8px;
+}
+
+.subtitle-underline12{
+    width: 250px;
+    height: 5px;
+    background: #0084ff;
+    border-radius: 9999px;
+    margin: 8px auto auto;
+    margin-bottom: 8px;
+}
+
 .carrinho {
     font-size: 14px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; 
@@ -1306,6 +1337,33 @@ hr.page-inner-content {
 
     .subtitle-underline9{
         width: 275px;
+        height: 5px;
+        background: #0084ff;
+        border-radius: 9999px;
+        margin: 8px auto auto;
+        margin-bottom: 8px;
+    }
+
+    .subtitle-underline10{
+        width: 170px;
+        height: 5px;
+        background: #0084ff;
+        border-radius: 9999px;
+        margin: 8px auto auto;
+        margin-bottom: 8px;
+    }
+
+    .subtitle-underline11{
+        width: 110px;
+        height: 5px;
+        background: #0084ff;
+        border-radius: 9999px;
+        margin: 8px auto auto;
+        margin-bottom: 8px;
+    }
+
+    .subtitle-underline12{
+        width: 140px;
         height: 5px;
         background: #0084ff;
         border-radius: 9999px;

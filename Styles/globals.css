@@ -26,6 +26,7 @@ html {
     border-radius: 10px;
 }
 
+
 .valor-total {
     text-align: right; /* Alinha à direita por padrão */
     font-size: 1.2rem;
@@ -1175,6 +1176,59 @@ hr.page-inner-content {
 }
 
 .product a:hover {
+    text-decoration: underline; /* Destaca o link ao passar o mouse */
+}
+
+
+
+
+
+.product1 { /*NOSSA POLITICA*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #004c94; /* Destaque com borda */
+    border-radius: 10px; /* Bordas arredondadas */
+    background-color: #f9f9f9; /* Fundo leve */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product1:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+.product1 img {
+    width: 100%;
+    max-width: 500px; /* Limita o tamanho da imagem */
+    height: auto;
+    border-radius: 15px; /* Imagens com cantos arredondados */
+    margin-bottom: 15px; /* Espaçamento abaixo da imagem */
+}
+
+.product1 p {
+    margin: 5px 0;
+    font-size: 1rem; /* Tamanho padrão da fonte */
+    color: #333; /* Cor de texto principal */
+    line-height: 1.5; /* Espaçamento entre linhas */
+}
+
+
+.product1 p:first-of-type {
+    font-size: 1.2rem; /* Tamanho maior para o título */
+    font-weight: bold; /* Negrito no título */
+    color: #004c94; /* Destaque na cor */
+}
+
+.product1 a {
+    text-decoration: none;
+    color: inherit; /* Mantém as cores definidas */
+}
+
+.product1 a:hover {
     text-decoration: underline; /* Destaca o link ao passar o mouse */
 }
 

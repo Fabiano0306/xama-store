@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Produto - Oversized DG</title>
+    <title>Detalhes do Produto - Regatas | Cores</title>
     <link rel="stylesheet" href="/Styles/globals.css">
     <style>
         body {
@@ -112,10 +112,8 @@
                         <li><a href="index.html">INICIO</a></li>
                         <li><a href="index.html#produtos-secao" style="text-decoration: none; color: inherit;">PRODUTOS</a></li>
                         <li><a href="index.html#sobre-nos" style="text-decoration: none; color: inherit;">SOBRE</a></li>
-
-
                         <li><a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">CONTATO</a></li>
-<li><a href="politica.html" style="text-decoration: none; color: inherit;">POLÍTICA</a></li>
+                        <li><a href="politica.html" style="text-decoration: none; color: inherit;">POLÍTICA</a></li>
                     </ul>
                 </nav>
             </div>
@@ -133,36 +131,27 @@
 
     <!-- Conteúdo Principal -->
     <div class="page-inner-content">
-        <h2 id="product-title"><u>OVERSIZED DG - BRANCA</u></h2><br \>
-        <a href="oversized.html" class="back-arrow" style="text-decoration: none;">
+        <h2 id="product-title"><u>POLÍTICA DE TROCA E DEVOLUÇÃO</u></h2><br \>
+        <a href="index.html" class="back-arrow" style="text-decoration: none;">
             <div class="texto-voltar-menu">
                 <b>← Menu anterior</b>
         </div>
         </a>
-        <div class="product">
+        <div class="product1">
             <div class="product-image-container" style="position: relative;">
-                <!-- Container das imagens com setas -->
-                <div id="image-slider" style="display: flex; align-items: center;">
-                    <span class="arrow" onclick="previousImage()">&#10094;</span>
-                    <img id="product-image" src="/images/products/oversized/Product-1.png" alt="Camiseta DG" width="300" onclick="openZoom()">
-                    <img id="product-image-2" src="/images/products/oversized/Product-2.png" alt="Camiseta DG Alternativa" width="300" style="display: none;" onclick="openZoom()">
-                    <span class="arrow" onclick="nextImage()">&#10095;</span>
-                </div>
+                <img id="product-image" src="/images/products/politica/POLITICA DE TROCA.png" alt="POLITICA" width="300" onclick="openZoom()">
+                <span class="search-icon" onclick="openZoom()">
                 <span class="search-icon" onclick="openZoom()">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 2a8 8 0 105.68 13.68l4.32 4.32a1 1 0 001.42-1.42l-4.32-4.32A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z" fill="#000"/>
                     </svg>
                 </span>
             </div>
-            <h3><u>PROMOÇÃO</u>:</h3>
+            <h3><u>NOSSA POLÍTICA DE TROCA E DEVOLUÇÃO</u></h3>
+            <p>(Clique para ampliar a imagem.)</p>
             <br></br>
-            <h2>R$89,90</h2>
-            <h4>À vista no PIX ganha 10% de desconto</h4>
-            <p>(Clique para ampliar ou na seta para mudar a imagem.)</p>
-            <br></br>
-            <p id="product-description"><b>Descrição: Camiseta DG - Oversized de alta qualidade.</b></p>
-            <p>Confira a disponibilidade no nosso <b><a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">WhatsApp</b></a>!</p>
-            <button id="add-to-cart" onclick="addToCart()">ADICIONAR AO CARRINHO</button>
+            
+             
         </div>
     </div>
 
@@ -232,7 +221,7 @@
             const cartItem = {
                 title: productTitle,
                 image: productImage,
-                price: 89.90
+                price: 49.90
             };
 
             let cart = JSON.parse(localStorage.getItem('cart')) || [];

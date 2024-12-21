@@ -418,6 +418,7 @@ header{
     line-height: 1rem;
     margin-bottom: 1.5rem;
     text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .header-bottom-side-left button{

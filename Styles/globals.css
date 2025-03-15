@@ -566,7 +566,7 @@ button .icon {
 @media (max-width: 768px) {
 
     .header-bottom-side-left h2 {
-        font-size: 1.5rem; /* Diminui mais a fonte no mobile */
+        font-size: 1.6rem; /* Diminui mais a fonte no mobile */
         text-align: center; /* Garante que fique centralizado */
     }
 
@@ -637,7 +637,7 @@ button .icon {
     .menu-button {
         display: block; /* Mostra o botão de menu no mobile */
         cursor: pointer;
-        margin-left: auto; /* Coloca o menu hamburguer à direita */
+        margin-left: auto; /* Coloca o menu à direita */
     }
 
     /* Quando o menu é ativado (quando o botão é clicado) */
@@ -661,7 +661,7 @@ button .icon {
 
     .menu-button{
         display: block;
-        margin-left: auto; /* Coloca o menu hamburguer à direita */
+        margin-left: auto; /* Coloca o menu à direita */
     }
 
     .header-bottom-side{

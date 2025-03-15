@@ -221,8 +221,10 @@
                 cart.forEach((item, index) => {
                     const listItem = document.createElement('li');
                     listItem.innerHTML = `
-                        <img src="${item.image}" alt="${item.title}" style="width: 150px; height: auto; margin-right: 10px;">
-                        ${item.title} - R$${item.price.toFixed(2)}
+                        <img src="${item.image}" width="50" />
+                        <p><b>${item.title}</b></p>
+                        <p>${item.option}</p> <!-- Exibe a opção escolhida -->
+                        <p>R$${item.price.toFixed(2)}</p>
                         <button class="remove-button" data-index="${index}">Remover</button>
                     `;
                     cartItems.appendChild(listItem);
@@ -260,11 +262,12 @@
 
                 let message = "Olá, gostaria de comprar os seguintes itens:\n\n";
                 cart.forEach((item) => {
-                    message += `- ${item.title}: R$${item.price.toFixed(2)}\n`;
+                    message += `- ${item.title} (${item.option}): R$${item.price.toFixed(2)}\n`;
                     message += `Imagem: ${item.image}\n`;
                 });
                 message += `\nTotal: R$${cart.reduce((total, item) => total + item.price, 0).toFixed(2)}`;
 
+            
                 const whatsappUrl = `https://wa.me/5547991906158?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
             });

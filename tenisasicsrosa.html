@@ -153,7 +153,11 @@
             </div>
             <h3><u>GRADE COM 12 UNIDADES</u>:</h3>
             <br></br>
-            <h2>R$48,00 - CADA PAR NO SAQUINHO</h2>
+            <label for="product-option"><b>ESCOLHA A EMBALAGEM:</b></label>
+            <select id="product-option">
+                <option value="48.00">R$48,00 - PAR NO SAQUINHO</option>
+                <option value="50.00">R$50,00 - PAR NA CAIXA</option>
+            </select>
             <br></br>
             <p1> ✅ Sola micro
                 ✅ Confortável
@@ -231,11 +235,15 @@
         function addToCart() {
             const productImage = document.getElementById('product-image').src;
             const productTitle = document.getElementById('product-title').textContent;
-
+            const selectedOption = document.getElementById('product-option');
+            const selectedPrice = parseFloat(selectedOption.value); // Convertendo corretamente para número
+            const selectedText = selectedOption.options[selectedOption.selectedIndex].text;
+            
             const cartItem = {
                 title: productTitle,
                 image: productImage,
-                price: 48.00
+                price: selectedPrice,
+                option: selectedText
             };
 
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -243,7 +251,7 @@
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCartCount();
 
-            alert(`${productTitle} adicionado ao carrinho!`);
+            alert(`${productTitle} (${selectedText}) adicionado ao carrinho por R$${selectedPrice.toFixed(2)}!`);
         }
 
         function updateCartCount() {

@@ -409,13 +409,13 @@ header{
 }
 
 .header-bottom-side-left h2{
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
     text-align: center;
 }
 
 .header-bottom-side-left p{
-    line-height: 1rem;
+    line-height: 2rem;
     margin-bottom: 1.5rem;
     text-align: center;
     font-family:Arial, Helvetica, sans-serif;
@@ -566,12 +566,12 @@ button .icon {
 @media (max-width: 768px) {
 
     .header-bottom-side-left h2 {
-        font-size: 1.6rem; /* Diminui mais a fonte no mobile */
+        font-size: 2rem; /* Diminui mais a fonte no mobile */
         text-align: center; /* Garante que fique centralizado */
     }
 
     .header-bottom-side-left p {
-        font-size: 0.9rem; /* Ajusta a frase debaixo */
+        font-size: 1rem; /* Ajusta a frase debaixo */
         text-align: center; /* Centraliza no mobile */
         padding: 10px; /* Dá espaço ao redor para não colar nas bordas */
     }

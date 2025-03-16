@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Produto - Tênis Asics</title>
+    <title>Detalhes do Produto - Tênis New Balance 247 Luxe</title>
     <link rel="stylesheet" href="/Styles/globals.css">
     <style>
         body {
@@ -133,8 +133,8 @@
 
     <!-- Conteúdo Principal -->
     <div class="page-inner-content">
-        <h2 id="product-title"><u>TÊNIS ASICS - VERDE</u></h2><br \>
-        <a href="tenisasics.html" class="back-arrow" style="text-decoration: none;">
+        <h2 id="product-title"><u>TÊNIS NEW BALANCE 247 LUXE</u></h2><br \>
+        <a href="tenisnewbalanceluxe.html" class="back-arrow" style="text-decoration: none;">
             <div class="texto-voltar-menu">
                 <b>← Menu anterior</b>
         </div>
@@ -143,7 +143,9 @@
             <div class="product-image-container" style="position: relative;">
                 <!-- Container das imagens com setas -->
                 <div id="image-slider" style="display: flex; align-items: center;">
-                    <img id="product-image" src="/images/products/asics/2.png" alt="Tênis asics" width="300" onclick="openZoom()">
+                    
+                    <img id="product-image" src="/images/products/NEW  BALANCE 247 LUXE/3.png" alt="Camiseta Gucci" width="300" onclick="openZoom()">
+                    
                 </div>
                 <span class="search-icon" onclick="openZoom()">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -151,27 +153,31 @@
                     </svg>
                 </span>
             </div>
-            <h3><u>GRADE COM 12 UNIDADES</u>:</h3>
+            <h3><u>GRADE COM 6 e 12 UNIDADES</u>:</h3>
             <br></br>
             <label for="product-option"><b>ESCOLHA A EMBALAGEM:</b></label>
             <select id="product-option">
-                <option value="576.00">R$48,00 - CADA PAR NO SAQUINHO (GRADE COM 12UN)</option>
-                <option value="600.00">R$50,00 - CADA PAR NA CAIXA (GRADE COM 12UN)</option>
+                <option value="420.00">R$70,00 - CADA PAR NA CAIXA (GRADE COM 06UN)</option>
+                <option value="780.00">R$65,00 - CADA PAR NA CAIXA (GRADE COM 12UN)</option>
             </select>
             <br></br>
             <p1>✨ATENÇÃO✨</p1>
             <br></br>
             <b>PRODUTO DE VENDA EM ATACADO, COMPRANDO A GRADE, SERÁ COBRADA A QUANTIDADE SELECIONADA DIRETO NO CARRINHO.</b>
             
-            <br></br>  ✅ Sola micro
-                ✅ Confortável
+            <br></br>
+                ✅ Palmilha confortavel
                 <br></br>
-                ✅ Gel
-                ✅ Macio
+                ✅ Detalhes modernos
+                <br></br>
+                ✅ Acabamento perfeito
+                <br></br>
+                ✅ Solado de alta qualidade
+                <br></br>
                 </p1>
             <p>(Clique para ampliar ou na seta para mudar a imagem.)</p>
             <br></br>
-            <p id="product-description"><b>Descrição: Tênis Asics Gel - Produto de alta qualidade direto da fábrica.</b></p>
+            <p id="product-description"><b>Descrição: Tênis New Balance 247 Luxe - Produto de alta qualidade direto da fábrica.</b></p>
             <p>Faça a encomenda no nosso <b><a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">WhatsApp</b></a>! Basta adicionar no carrinho e finalizar a compra.</p>
             <button id="add-to-cart" onclick="addToCart()">ADICIONAR AO CARRINHO</button>
         </div>
@@ -221,9 +227,7 @@
         let currentImageIndex = 0;
         const images = [    
         document.getElementById('product-image'), 
-        document.getElementById('product-image-2'), 
-        document.getElementById('product-image-3'),
-        document.getElementById('product-image-4')
+        document.getElementById('product-image-2') 
 ];
 
         function nextImage() {
@@ -265,6 +269,7 @@
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             cartCount.textContent = cart.length;
         }
+        
 
         document.addEventListener('DOMContentLoaded', function() {
             updateCartCount();

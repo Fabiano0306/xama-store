@@ -1163,6 +1163,33 @@ hr.page-inner-content {
     margin-bottom: 8px;
 }
 
+.subtitle-underline14{
+    width: 300px;
+    height: 5px;
+    background: #0084ff;
+    border-radius: 9999px;
+    margin: 8px auto auto;
+    margin-bottom: 8px;
+}
+
+.subtitle-underline15{
+    width: 390px;
+    height: 5px;
+    background: #0084ff;
+    border-radius: 9999px;
+    margin: 8px auto auto;
+    margin-bottom: 8px;
+}
+
+.subtitle-underline16{
+    width: 440px;
+    height: 5px;
+    background: #0084ff;
+    border-radius: 9999px;
+    margin: 8px auto auto;
+    margin-bottom: 8px;
+}
+
 .carrinho {
     font-size: 14px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; 
@@ -1477,6 +1504,33 @@ hr.page-inner-content {
 
     .subtitle-underline13{
         width: 205px;
+        height: 5px;
+        background: #0084ff;
+        border-radius: 9999px;
+        margin: 8px auto auto;
+        margin-bottom: 8px;
+    }
+
+    .subtitle-underline14{
+        width: 170px;
+        height: 5px;
+        background: #0084ff;
+        border-radius: 9999px;
+        margin: 8px auto auto;
+        margin-bottom: 8px;
+    }
+
+    .subtitle-underline15{
+        width: 218px;
+        height: 5px;
+        background: #0084ff;
+        border-radius: 9999px;
+        margin: 8px auto auto;
+        margin-bottom: 8px;
+    }
+
+    .subtitle-underline16{
+        width: 245px;
         height: 5px;
         background: #0084ff;
         border-radius: 9999px;

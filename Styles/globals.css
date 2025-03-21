@@ -941,7 +941,6 @@ hr.page-inner-content {
 .cols{
     display: grid;
     justify-content: space-evenly;
-    padding: 4rem 1rem;
     max-width: 100%; /* Garante que o grid ocupe toda a largura disponível */
     margin: 0 auto; /* Centraliza o grid */
 }
@@ -1332,7 +1331,7 @@ hr.page-inner-content {
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     .product {
-        padding: 15px;
+        padding: 15px; /* Espaçamento interno maior */
         max-width: 100%; /* Garante que os produtos ocupem bem o espaço */
     }
 
@@ -1608,7 +1607,7 @@ hr.page-inner-content {
     }
 
     .cols {
-        grid-template-columns: 1fr; /* Produtos em coluna no celular */
+        grid-template-columns: repeat(3, 1fr); /* Sempre 3 colunas */
     }
 
     button {
@@ -1645,18 +1644,16 @@ img {
 
 .cols-4 { /*ITENS DO NOSSOS PRODUTOS TELA PC*/
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Três colunas em telas maiores */
+    grid-template-columns: repeat(3, 1fr); /* Sempre 3 colunas */
     max-width: 100%;
     height: auto;
     gap: 20px;
+    justify-content: center;
 }
 
 
 
 @media (max-width: 768px) {
-    .cols {
-        grid-template-columns: 1fr; /* Apenas uma coluna no celular */
-    }
 
     .cols-3 {
     display: grid;
@@ -1812,7 +1809,7 @@ img {
 }
 
     .cols-4{ /*NOSSOS PRODUTOS*/
-        grid-template-columns: repeat(3, 3fr);
+        grid-template-columns: repeat(3, 1fr); /* Sempre 3 colunas */
         max-width: 100%;
         height: auto; /* Mantém a proporção da imagem */
     }
@@ -1831,6 +1828,8 @@ img {
         margin-bottom: 4rem;
     }
 }
+
+
 
 /* testemunhas */
 

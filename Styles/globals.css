@@ -262,10 +262,11 @@ button:hover {
     animation: shadow-appear 0.5s forwards; /* Ativa o efeito ao passar o mouse */
 }
 
-.header-inner-content{
-    max-width: 1600px;
-    margin-left: auto;
-    margin-right: auto;
+.header-inner-content {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 /* Estilos básicos da navbar */
@@ -611,8 +612,10 @@ button .icon {
     }
 
     .navbar {
-        flex-direction: row; /* Empilha os elementos no mobile */
-        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px 0;
     }
 
     .logotipo {
@@ -636,16 +639,20 @@ button .icon {
     width: 100%; /* Ocupa toda a largura do container */
     display: none; /* Inicialmente escondido */
     z-index: 1000; /* Fica acima de outros elementos */
+    text-align: center; /* Centraliza o texto */
+    gap: 10px; /* Espaçamento entre os itens */
     }
 
     .nav-icon-container {
-        margin-top: 10px; /* Adiciona espaço acima dos ícones */
+        margin-left: 0; /* Remove o espaçamento à esquerda */
+        margin-top: 10px; /* Adiciona um espaçamento acima */
     }
 
     .nav-icon-container img {
         max-width: 25px; /* Diminui um pouco os ícones no mobile */
     }
 }
+
 
 /* Ocultar o menu padrão e mostrar o botão de menu no mobile */
 @media (max-width: 768px) {

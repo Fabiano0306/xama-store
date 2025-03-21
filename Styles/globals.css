@@ -4,6 +4,12 @@
     margin: 0;
 }
 
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body{
     font-family: 'arial';
 }
@@ -26,6 +32,10 @@ html {
     border-radius: 10px;
 }
 
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 .valor-total {
     text-align: right; /* Alinha à direita por padrão */
@@ -601,7 +611,7 @@ button .icon {
     }
 
     .header-bottom-side-left h2 {
-        font-size: 2rem; /* Diminui mais a fonte no mobile */
+        font-size: 1.7rem; /* Diminui mais a fonte no mobile */
         text-align: center; /* Garante que fique centralizado */
     }
 
@@ -624,7 +634,8 @@ button .icon {
     }
 
     .logotipo img {
-        max-width: 50%; /* Diminui o logotipo no mobile */
+        max-width: 40%; /* Diminui o logotipo no mobile */
+        margin-right: 150px;
     }
 
     .menu ul {
@@ -644,7 +655,7 @@ button .icon {
     }
 
     .nav-icon-container {
-        margin-left: 0; /* Remove o espaçamento à esquerda */
+        margin-left: 70%; /* Remove o espaçamento à esquerda */
         margin-top: 10px; /* Adiciona um espaçamento acima */
     }
 

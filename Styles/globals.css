@@ -916,23 +916,25 @@ main{
 
 
 .page-inner-content{
-    max-width: 1600px;
-    margin: 0 auto;
+    max-width: 1200px;  /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    width: 100%;
+    padding: 20px; /* Espaçamento interno */
 }
 
 hr.page-inner-content {
-    border: underline;
+    border: underline; /* Adiciona uma linha tracejada */
     border-top: 0px dashed #ffffff; /* Ajuste a cor conforme necessário */
-    border-left: 0px;
+    border-left: 0px; /* Remove a borda à esquerda */
     margin: 20px 0; /* Ajuste a margem para posicionamento */
-    max-width: 2000px;
-    border-right: 0px;
+    max-width: 2000px; /* Ajuste a largura conforme necessário */
+    border-right: 0px; /* Remove a borda à direita */
 }
 
 .page-inner-content hr {
-    border: none;
-    border-top: 1px dashed #333;
-    width: 100%;
+    border: none; /* Remove a borda padrão */
+    border-top: 1px dashed #333; /* Adiciona uma linha tracejada */
+    width: 100%; /* Ocupa toda a largura disponível */
 }
 
 
@@ -1014,9 +1016,10 @@ hr.page-inner-content {
 }
 
 .cols-4{
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-}
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas no mobile */
+        gap: 10px; /* Espaçamento entre os produtos */
+        justify-content: center;
+    }
 
 .cols>*{
     cursor: pointer;
@@ -1331,6 +1334,7 @@ hr.page-inner-content {
 @media (max-width: 768px) {
     .product {
         padding: 15px;
+        max-width: 100%; /* Garante que os produtos ocupem bem o espaço */
     }
 
     .product img {
@@ -1349,6 +1353,8 @@ hr.page-inner-content {
 @media (max-width: 480px) {
     .product {
         padding: 10px;
+        max-width: 100%; /* Garante que os produtos ocupem bem o espaço */
+        margin: 0 auto; /* Centraliza os produtos */
     }
 
     .product img {
@@ -1707,11 +1713,17 @@ img {
 }
 }
 
-        .cols-4 img{
-            max-width: 100%;
-            border-radius: 20px;
-            box-shadow: 10px 0px 30px #000000;
-        }
+    .cols-4 img{
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 10px 0px 30px #000000;
+    }
+}
+
+    .cols-4 {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas no mobile */
+    gap: 10px; /* Espaçamento entre os produtos */
+    justify-content: center;
 }
 
 img {
@@ -1733,6 +1745,12 @@ img {
         max-width: 100%;
         border-radius: 20px;
         box-shadow: 10px 0px 30px #000000;
+    }
+
+    .cols-4 {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas no mobile */
+        gap: 10px; /* Espaçamento entre os produtos */
+        justify-content: center;
     }
 
     img {

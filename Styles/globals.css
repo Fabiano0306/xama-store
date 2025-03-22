@@ -920,7 +920,7 @@ main{
     margin: 0 auto; /* Centraliza o conteúdo */
     width: 100%; /* Ocupa toda a largura disponível */
     padding: 20px; /* Espaçamento interno */
-    padding-top: 0.1px; /* Espaçamento acima dos produtos */
+    padding-top: 50px; /* Espaçamento acima dos produtos */
 }
 
 hr.page-inner-content {

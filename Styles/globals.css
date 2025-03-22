@@ -920,7 +920,7 @@ main{
     margin: 0 auto; /* Centraliza o conteúdo */
     width: 100%; /* Ocupa toda a largura disponível */
     padding: 20px; /* Espaçamento interno */
-    padding-top: 80px; /* Espaçamento acima dos produtos */
+    padding-top: 0.1px; /* Espaçamento acima dos produtos */
 }
 
 hr.page-inner-content {
@@ -1206,6 +1206,42 @@ hr.page-inner-content {
 
 .subtitle-underline16{
     width: 440px;
+    height: 5px;
+    background: #0084ff;
+    border-radius: 9999px;
+    margin: 8px auto auto;
+    margin-bottom: 8px;
+}
+
+.subtitle-underline17{
+    width: 375px;
+    height: 5px;
+    background: #0084ff;
+    border-radius: 9999px;
+    margin: 8px auto auto;
+    margin-bottom: 8px;
+}
+
+.subtitle-underline18{
+    width: 265px;
+    height: 5px;
+    background: #0084ff;
+    border-radius: 9999px;
+    margin: 8px auto auto;
+    margin-bottom: 8px;
+}
+
+.subtitle-underline19{
+    width: 130px;
+    height: 5px;
+    background: #0084ff;
+    border-radius: 9999px;
+    margin: 8px auto auto;
+    margin-bottom: 8px;
+}
+
+.subtitle-underline20{
+    width: 320px;
     height: 5px;
     background: #0084ff;
     border-radius: 9999px;
@@ -1557,6 +1593,42 @@ hr.page-inner-content {
 
     .subtitle-underline16{
         width: 245px;
+        height: 5px;
+        background: #0084ff;
+        border-radius: 9999px;
+        margin: 8px auto auto;
+        margin-bottom: 8px;
+    }
+
+    .subtitle-underline17{
+        width: 212px;
+        height: 5px;
+        background: #0084ff;
+        border-radius: 9999px;
+        margin: 8px auto auto;
+        margin-bottom: 8px;
+    }
+
+    .subtitle-underline18{
+        width: 145px;
+        height: 5px;
+        background: #0084ff;
+        border-radius: 9999px;
+        margin: 8px auto auto;
+        margin-bottom: 8px;
+    }
+
+    .subtitle-underline19{
+        width: 75px;
+        height: 5px;
+        background: #0084ff;
+        border-radius: 9999px;
+        margin: 8px auto auto;
+        margin-bottom: 8px;
+    }
+
+    .subtitle-underline20{
+        width: 180px;
         height: 5px;
         background: #0084ff;
         border-radius: 9999px;

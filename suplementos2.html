@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto - SUPLEMENTO</title>
+    <link rel="stylesheet" href="/Styles/globals.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .page-inner-content {
+            padding: 20px;
+        }
+        .product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        #add-to-cart {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2b2b2b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #add-to-cart:hover {
+            background-color: #033463;
+        }
+        .zoom-image {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .zoom-image img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid white;
+        }
+        .zoom-image .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        .product-image-container {
+            position: relative;
+            display: inline-block;
+        }
+        .search-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 30%;
+            padding: 5px;
+        }
+        .search-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #000;
+        }
+        .search-icon:hover svg {
+            fill: #033463;
+        }
+        .arrow {
+            font-size: 30px;
+            cursor: pointer;
+            color: #2b2b2b;
+        }
+        .arrow:hover {
+            color: #033463;
+        }
+
+        .back-arrow {
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #000 !important; /* Cor inicial */
+    transition: color 0.3s; /* Suaviza a transição */
+}
+
+.back-arrow:hover {
+    color: #0084ff !important; /* Cor ao passar o mouse */
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="header-inner-content">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <div class="logotipo"><img src="images/logo.png"></div>
+            </a>
+            <div class="menu" id="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="index.html#produtos-secao" style="text-decoration: none; color: inherit;">PRODUTOS</a></li>
+                        <li><a href="index.html#sobre-nos" style="text-decoration: none; color: inherit;">SOBRE</a></li>
+
+
+                        <li><a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">CONTATO</a></li>
+<li><a href="politica.html" style="text-decoration: none; color: inherit;">POLÍTICA</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-icon-container">
+                <img src="/images/cart.png" id="cart-icon" />
+                <span id="cart-count">0</span>
+                <div id="cart-dropdown" style="display: none;">
+                    <ul id="cart-items"></ul>
+                    <p>Total: R$ <span id="cart-total">0.00</span></p>
+                </div>
+                <img src="images/menu.png" class="menu-button" id="menu-button" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="page-inner-content">
+        <h2 id="product-title"><u>CREATINA</u></h2><br \>
+        <a href="suplementos.html" class="back-arrow" style="text-decoration: none;">
+            <div class="texto-voltar-menu">
+                <b>← Menu anterior</b>
+        </div>
+        </a>
+        <div class="product">
+            <div class="product-image-container" style="position: relative;">
+                <!-- Container das imagens com setas -->
+                <div id="image-slider" style="display: flex; align-items: center;">
+                    
+                    <img id="product-image" src="/images/products/Suplementos/7.png" alt="DC" width="300" onclick="openZoom()">
+                    
+                </div>
+                <span class="search-icon" onclick="openZoom()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2a8 8 0 105.68 13.68l4.32 4.32a1 1 0 001.42-1.42l-4.32-4.32A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z" fill="#000"/>
+                    </svg>
+                </span>
+            </div>
+            <h3><u>CREATINA MAX TITANIUM</u></h3>
+            <br></br>
+            <label for="product-option"><b>SELECIONE A QUANTIDADE:</b></label>
+            <select id="product-option">
+                <option value="89.90">R$89,90 - 1UN</option>
+                <option value="179.80">R$179,80 - 2UN</option>
+                <option value="269.70">R$269,70 - 3UN</option>
+            </select>
+            <br></br>
+            <p1>✨ATENÇÃO✨</p1>
+            <br></br>
+            <b>A creatina é um dos suplementos mais estudados e eficazes para o ganho de força, resistência e recuperação muscular. Produzida naturalmente pelo corpo e encontrada em carnes e peixes, ela é essencial para o fornecimento rápido de energia durante exercícios de alta intensidade.</b>
+            
+            <br></br>
+            <B>⚡ Benefícios:</B>
+            ✅ Aumento de força e potência muscular – Fundamental para treinos explosivos como musculação e HIIT.
+            <BR></BR>
+            ✅ Melhora da resistência – Ajuda a realizar mais repetições e treinos mais longos.
+            <BR></BR>
+            ✅ Acelera a recuperação muscular – Reduz a fadiga pós-treino.
+            <BR></BR>
+            ✅ Hidratação e aumento celular – Favorece o ganho de massa muscular.
+            <BR></BR>
+            ✅ Melhora da função cognitiva – Estudos indicam benefícios para memória e raciocínio.
+
+            <br></br><br></br>
+
+            <b>📌 Como Tomar Creatina?</b><br></br>
+            💧 A recomendação geral é consumir 3g a 5g por dia, de preferência após o treino ou em qualquer momento do dia, pois seu efeito é acumulativo.<br></br>
+            💧 Não precisa de "fase de saturação".<br></br>
+            💧 Pode ser consumida com água, suco ou junto com carboidratos para melhor absorção.<br></br>
+            <br></br>
+            <br></br>
+            
+
+<b>🔴 Quem deve evitar ou consultar um médico antes de usar?</b><br></br>
+❌ Pessoas com problemas renais – Embora não cause danos em pessoas saudáveis, quem já tem doenças renais deve evitar ou usar sob orientação médica.<br></br>
+❌ Indivíduos com problemas hepáticos – O metabolismo da creatina pode sobrecarregar o fígado em pessoas com doenças hepáticas.<br></br>
+❌ Menores de 18 anos – O uso deve ser orientado por um profissional, pois ainda estão em fase de desenvolvimento.<br></br>
+❌ Gestantes e lactantes – Não há estudos suficientes para garantir a segurança nesses casos.<br></br>
+❌ Quem tem hipertensão ou problemas cardíacos – Pode causar leve retenção de líquidos, o que pode impactar a pressão arterial.<br></br><br></br>
+
+<b>📌 Mitos sobre a Creatina:</b><br></br>
+🚫 "Faz mal para os rins" – Estudos mostram que a creatina não prejudica os rins em pessoas saudáveis.<br></br>
+🚫 "Faz inchar" – A creatina promove retenção hídrica intramuscular, não sob a pele, ou seja, melhora a hidratação celular sem causar inchaço estético.<br></br>
+🚫 "Só funciona se ciclar" – O consumo contínuo é mais eficiente, pois a creatina funciona pelo acúmulo no organismo.<br></br><br></br>
+
+
+            
+                <p>(Clique para ampliar ou na seta para mudar a imagem, se houver.)</p>
+
+            <br></br>
+
+            <p id="product-description"><b>Descrição: Creatina Max Titanium 300g - Produto de alta qualidade, original, lacrado.</b></p>
+            <p>Faça a encomenda no nosso <b><a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">WhatsApp</b></a>! Basta adicionar no carrinho e finalizar a compra.</p>
+            <button id="add-to-cart" onclick="addToCart()">ADICIONAR AO CARRINHO</button>
+        </div>
+    </div>
+
+    <!-- Imagem de Zoom -->
+    <div class="zoom-image" id="zoom-image" onclick="closeZoom()">
+        <span class="close" onclick="closeZoom()">&times;</span>
+        <img id="zoomed-image" src="" alt="Zoomed Image">
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="gray-background">
+        <div class="page-inner-content footer-content">
+            <div class="download-options">
+                <p>Entre em contato conosco</p>
+                <p>Vendas somente pelo Whatsapp</p>
+                <div>
+                    <a href="https://wa.me/5547991906158" target="_blank"><img src="/images/app-store.png" alt="WhatsApp" /></a>
+                    <a href="https://www.instagram.com/deividarndtt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="/images/play-store.png" alt="Instagram" /></a>
+                </div>
+            </div>
+            <div class="logo-footer">
+                <div class="logo">
+                    <img src="/images/footer2.png" alt="Logo Footer" />
+                </div>
+                <p>Nosso objetivo é ajudar pessoas a terem estilo!</p>
+            </div>
+            <div class="links-footer">
+                <h3>Links úteis</h3>
+                <ul>
+                    <a href="politica.html" style="text-decoration: none; color: inherit;">
+                    <li>Nossa Política</li></a>
+                    <li>Cupons de Desconto</li>
+                    <li><a href="https://wa.me/5547991906158" target="_blank" style="text-decoration: none; color: inherit;">WhatsApp</a></li>
+                    <li><a href="https://www.instagram.com/deividarndtt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="text-decoration: none; color: inherit;">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="page-inner-content" />
+        <div class="page-inner-content copyright">
+             <p>Este site foi elaborado e desenvolvido por <a href="https://www.instagram.com/_nextfeel/" target="_blank" style="text-decoration: none; color: inherit;"><u><b>Fabiano Santos</b></u>.</a> Todos os direitos autorais reservados à <b>XAMÃ STORE</b></p>
+        </div>
+    </footer>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = [    
+        document.getElementById('product-image'), 
+        document.getElementById('product-image-2') 
+];
+
+        function nextImage() {
+            images[currentImageIndex].style.display = 'none';
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].style.display = 'block';
+        }
+
+        function previousImage() {
+            images[currentImageIndex].style.display = 'none';
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            images[currentImageIndex].style.display = 'block';
+        }
+
+        function addToCart() {
+            const productImage = document.getElementById('product-image').src;
+            const productTitle = document.getElementById('product-title').textContent;
+            const selectedOption = document.getElementById('product-option');
+            const selectedPrice = parseFloat(selectedOption.value); // Convertendo corretamente para número
+            const selectedText = selectedOption.options[selectedOption.selectedIndex].text;
+            
+            const cartItem = {
+                title: productTitle,
+                image: productImage,
+                price: selectedPrice,
+                option: selectedText
+            };
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(cartItem);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+
+            alert(`${productTitle} (${selectedText}) adicionado ao carrinho por R$${selectedPrice.toFixed(2)}!`);
+        }
+
+        function updateCartCount() {
+            const cartCount = document.getElementById('cart-count');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cartCount.textContent = cart.length;
+        }
+        
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+        });
+
+        document.getElementById('cart-icon').addEventListener('click', function() {
+            window.location.href = 'cart.html';
+        });
+
+        function openZoom() {
+            const zoomedImage = document.getElementById('zoomed-image');
+            const productImage = images[currentImageIndex].src;
+            zoomedImage.src = productImage;
+            document.getElementById('zoom-image').style.display = 'flex';
+        }
+
+        function closeZoom() {
+            document.getElementById('zoom-image').style.display = 'none';
+        }
+
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector(".menu-button");
+            const navbar = document.querySelector(".navbar");
+    
+            menuButton.addEventListener("click", () => {
+                navbar.classList.toggle("show-menu"); // Alterna a classe para mostrar/ocultar o menu
+            });
+        });
+    </script>
+</body>
+</html>
